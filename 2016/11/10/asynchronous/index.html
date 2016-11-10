@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
     <meta charset="utf-8">
     
@@ -13,7 +13,7 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
 <meta property="og:site_name" content="Science & Technology For Future">
 <meta property="og:description" content="���ûص�����ʵ���첽������
 var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err,data) {   if (err){       return console.error(err);   }   console.log(data.toString());});console.log(“�߼���">
-<meta property="og:updated_time" content="2016-11-10T04:21:10.768Z">
+<meta property="og:updated_time" content="2016-11-10T04:26:26.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="asynchronous">
 <meta name="twitter:description" content="���ûص�����ʵ���첽������
@@ -83,14 +83,14 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -102,11 +102,11 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -136,7 +136,7 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
                 </td>
@@ -156,16 +156,16 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
             <h2 id="name">PPOffice</h2>
             <h3 id="title">Web Developer &amp; Designer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>BeiJing, China</span>
-            <a id="follow" target="_blank" href="https://github.com/arronrose/">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/arronrose/">关注我</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 4
-                <span>posts</span>
+                <span>文章</span>
             </div>
             <div class="article-info-block">
                 0
-                <span>tag</span>
+                <span>标签</span>
             </div>
         </div>
         
@@ -258,16 +258,11 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
 <p>�ص����Ƶ�����</p>
 <p>�����������ӿ��Կ������ص������ṩ�˷ǳ����������ԡ���ע�⣬�����ڿ�ʼ�����ǰ�ͼ�еĿ⺯���ĳ�Ϊ�м亯���ˣ�������Ϊ�ص�������������Ӧ�úͿ�֮�䡣�κ�ʱ����ֻҪ���������������������������ԣ����������ûص���</p>
 <p>��������������ôʵ�ֵ��أ�է���������ص��ƺ�ֻ�Ǻ������ĵ��ã�����ϸһ��ĥ�����Է�������֮����һ���ؼ��Ĳ�ͬ���ڻص��У���������ĳ�ַ�ʽ���ѻص�����������һ�������м亯����������ô���⣬�ڴ���һ���ص�����֮ǰ���м亯���ǲ������ġ����仰˵����������������ʱ��ͨ���Ǽǲ�ͬ�Ļص����������������ı��м亯������Ϊ�����ͱȼ򵥵ĺ�������Ҫ����̫���ˡ��뿴��������Pythonд�ɵĻص��ļ���ʾ����</p>
-<p>even.py</p>
-<p>##�ص�����1</p>
-<p>##����һ��2k��ʽ��ż��<br>def double(x):<br>    return x * 2</p>
-<p>##�ص�����2</p>
-<p>##����һ��4k��ʽ��ż��<br>def quadruple(x):<br>    return x * 4</p>
+<p>even.py<br>�ص�����1<br>����һ��2k��ʽ��ż��<br>def double(x):<br>    return x * 2</p>
+<p>�ص�����2<br>����һ��4k��ʽ��ż��<br>def quadruple(x):<br>    return x * 4</p>
 <p>callback_demo.py<br>from even import *</p>
-<p>##�м亯��</p>
-<p>##����һ������ż���ĺ�����Ϊ����</p>
-<p>##����һ������<br>def getOddNumber(k, getEvenNumber):<br>    return 1 + getEvenNumber(k)</p>
-<p>##��ʼ�����������ǳ�����������<br>def main():<br>    k = 1</p>
+<p>�м亯��<br>����һ������ż���ĺ�����Ϊ����<br>����һ������<br>def getOddNumber(k, getEvenNumber):<br>    return 1 + getEvenNumber(k)</p>
+<p>��ʼ�����������ǳ�����������<br>def main():<br>    k = 1</p>
 <pre><code>#����Ҫ����һ��2k+1��ʽ������ʱ
 i = getOddNumber(k, double)
 print(i)
@@ -294,7 +289,7 @@ print(i)
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="civbukxci0002vw0r8d3upu37" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="civbut8950002yc0r078we3rq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -362,7 +357,7 @@ print(i)
 
             
     
-        <a href="http://yoursite.com/2016/11/10/asynchronous/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/11/10/asynchronous/">Comments</a>
+        <a href="http://yoursite.com/2016/11/10/asynchronous/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/11/10/asynchronous/">评论</a>
     
 
         </footer>
@@ -373,7 +368,7 @@ print(i)
     
     
         <a href="/2016/11/06/To 365/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
+            <strong class="article-nav-caption">下一篇</strong>
             <div class="article-nav-title">To 365</div>
         </a>
     
@@ -401,7 +396,7 @@ print(i)
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">recent</h3>
+        <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
@@ -490,9 +485,9 @@ print(i)
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -503,7 +498,7 @@ print(i)
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
                 
