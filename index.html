@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                5
+                6
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -206,6 +206,124 @@
 
             
             <section id="main">
+    <article id="post-mysql_deploy" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><p><strong>1.修改配置文件</strong></p>
+<ul>
+<li>/etc/mysql </li>
+<li>找到my.cnf，不清楚mysql配置文件编码的话，建议使用</li>
+<li>vi  /etc/mysql/my.cnf</li>
+<li>i到bind-address 127.0.0.1</li>
+<li>注释掉这句话：# bind-address 127.0.0.1</li>
+<li>：wq保存并退出，如果出现问题，则使用</li>
+<li>：w !sudo tee %</li>
+</ul>
+<p><strong>2.修改mysql host</strong></p>
+<ul>
+<li>mysql&gt; use mysql  </li>
+<li>mysql&gt; update user set Host=’%’ where User=’root’;  </li>
+<li>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION;  </li>
+<li>mysql&gt; FLUSH PRIVILEGES; </li>
+</ul>
+<p><strong>3.重启mysql</strong></p>
+<ul>
+<li>/etc/init.d/mysql  stop</li>
+<li>/etc/init.d/mysql  start</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj14ya6hi0005rc0rh9i0giiu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/04/05/mysql_deploy/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/05/mysql_deploy/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-git_conclusion" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -299,7 +417,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj14qptnw0003dk0rjpo5rmiu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj14ya6h10002rc0r08dlvzvt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -425,7 +543,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj14qptnt0002dk0rie6wkvq4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj14ya6h40003rc0r8w8xdo5q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -553,7 +671,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj14qptno0001dk0rjmjagq0h" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj14ya6gm0000rc0r18hypryz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -675,7 +793,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/05/Nginx/" data-id="cj14qptnh0000dk0rdtbizd3w" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/05/Nginx/" data-id="cj14ya6gv0001rc0rmxmcqqjm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -798,7 +916,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/05/hello-world/" data-id="cj14qptny0004dk0rtygux4sp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/05/hello-world/" data-id="cj14ya6h80004rc0rhk1i0oxp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -888,6 +1006,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/04/05/mysql_deploy/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/05/mysql_deploy/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2017-04-05T12:25:15.353Z" itemprop="datePublished">2017-04-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/04/05/git_conclusion/" class="thumbnail">
     
     
@@ -961,25 +1098,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/05/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/11/05/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2016-11-05T06:07:27.123Z" itemprop="datePublished">2016-11-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -991,7 +1109,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
