@@ -239,28 +239,9 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><p>**1.修改配置文件</p>
-<ul>
-<li>/etc/mysql </li>
-<li>找到my.cnf，不清楚mysql配置文件编码的话，建议使用</li>
-<li>vi  /etc/mysql/my.cnf</li>
-<li>i到bind-address 127.0.0.1</li>
-<li>注释掉这句话：# bind-address 127.0.0.1</li>
-<li>：wq保存并退出，如果出现问题，则使用</li>
-<li>：w !sudo tee %</li>
-</ul>
-<p>**2.修改mysql host</p>
-<ul>
-<li>mysql&gt; use mysql  </li>
-<li>mysql&gt; update user set Host=’%’ where User=’root’</li>
-<li>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION </li>
-<li>mysql&gt; FLUSH PRIVILEGES</li>
-</ul>
-<p>**3.重启mysql</p>
-<ul>
-<li>/etc/init.d/mysql  stop</li>
-<li>/etc/init.d/mysql  start</li>
-</ul>
+            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1.修改配置文件"></a>1.修改配置文件</h2><p>/etc/mysql<br>找到my.cnf，不清楚mysql配置文件编码的话，建议使用<br>vi  /etc/mysql/my.cnf<br>i到bind-address 127.0.0.1<br>注释掉这句话：# bind-address 127.0.0.1<br>：wq保存并退出，如果出现问题，则使用<br>：w !sudo tee %</p>
+<h2 id="2-修改mysql-host"><a href="#2-修改mysql-host" class="headerlink" title="2.修改mysql host"></a>2.修改mysql host</h2><p>mysql&gt; use mysql<br>mysql&gt; update user set Host=’%’ where User=’root’<br>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION<br>mysql&gt; FLUSH PRIVILEGES</p>
+<h2 id="3-重启mysql"><a href="#3-重启mysql" class="headerlink" title="3.重启mysql"></a>3.重启mysql</h2><p>/etc/init.d/mysql  stop<br>/etc/init.d/mysql  start</p>
 
         
         </div>
@@ -271,7 +252,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj14yy2kw0003xw0rwfehir7r" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj14z2ezs0005yc0r2qhw2bcs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -442,7 +423,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj14yy2kw0002xw0rzxk1v1jl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj14z2ey20003yc0r1utl69hl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -568,7 +549,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj14yy2lb0005xw0rx7mtsgz6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj14z2ey20002yc0rejyr3dym" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -696,7 +677,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj14yy2kg0001xw0rj8r33poz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj14z2ey20001yc0r3hgl001c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -818,7 +799,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/05/Nginx/" data-id="cj14yy2kg0000xw0r5c2r1k7a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/05/Nginx/" data-id="cj14z2exm0000yc0r7j1wc0gj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -941,7 +922,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/05/hello-world/" data-id="cj14yy2kw0004xw0rsuoek6pv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/05/hello-world/" data-id="cj14z2ey20004yc0r0sna5kpu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

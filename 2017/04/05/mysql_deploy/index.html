@@ -5,46 +5,19 @@
     
     <title>mysql deploy | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="MySQL数据库如何实现远程登录**1.修改配置文件
-
-/etc/mysql 
-找到my.cnf，不清楚mysql配置文件编码的话，建议使用
-vi  /etc/mysql/my.cnf
-i到bind-address 127.0.0.1
-注释掉这句话：# bind-address 127.0.0.1
-：wq保存并退出，如果出现问题，则使用
-：w !sudo tee %
-
-**2.修改mysql ho">
+    <meta name="description" content="MySQL数据库如何实现远程登录1.修改配置文件/etc/mysql找到my.cnf，不清楚mysql配置文件编码的话，建议使用vi  /etc/mysql/my.cnfi到bind-address 127.0.0.1注释掉这句话：# bind-address 127.0.0.1：wq保存并退出，如果出现问题，则使用：w !sudo tee %
+2.修改mysql hostmysql&amp;gt; us">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql deploy">
 <meta property="og:url" content="http://yoursite.com/2017/04/05/mysql_deploy/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
-<meta property="og:description" content="MySQL数据库如何实现远程登录**1.修改配置文件
-
-/etc/mysql 
-找到my.cnf，不清楚mysql配置文件编码的话，建议使用
-vi  /etc/mysql/my.cnf
-i到bind-address 127.0.0.1
-注释掉这句话：# bind-address 127.0.0.1
-：wq保存并退出，如果出现问题，则使用
-：w !sudo tee %
-
-**2.修改mysql ho">
-<meta property="og:updated_time" content="2017-04-05T12:42:29.397Z">
+<meta property="og:description" content="MySQL数据库如何实现远程登录1.修改配置文件/etc/mysql找到my.cnf，不清楚mysql配置文件编码的话，建议使用vi  /etc/mysql/my.cnfi到bind-address 127.0.0.1注释掉这句话：# bind-address 127.0.0.1：wq保存并退出，如果出现问题，则使用：w !sudo tee %
+2.修改mysql hostmysql&amp;gt; us">
+<meta property="og:updated_time" content="2017-04-05T12:49:23.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql deploy">
-<meta name="twitter:description" content="MySQL数据库如何实现远程登录**1.修改配置文件
-
-/etc/mysql 
-找到my.cnf，不清楚mysql配置文件编码的话，建议使用
-vi  /etc/mysql/my.cnf
-i到bind-address 127.0.0.1
-注释掉这句话：# bind-address 127.0.0.1
-：wq保存并退出，如果出现问题，则使用
-：w !sudo tee %
-
-**2.修改mysql ho">
+<meta name="twitter:description" content="MySQL数据库如何实现远程登录1.修改配置文件/etc/mysql找到my.cnf，不清楚mysql配置文件编码的话，建议使用vi  /etc/mysql/my.cnfi到bind-address 127.0.0.1注释掉这句话：# bind-address 127.0.0.1：wq保存并退出，如果出现问题，则使用：w !sudo tee %
+2.修改mysql hostmysql&amp;gt; us">
     
 
     
@@ -272,28 +245,9 @@ i到bind-address 127.0.0.1
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><p>**1.修改配置文件</p>
-<ul>
-<li>/etc/mysql </li>
-<li>找到my.cnf，不清楚mysql配置文件编码的话，建议使用</li>
-<li>vi  /etc/mysql/my.cnf</li>
-<li>i到bind-address 127.0.0.1</li>
-<li>注释掉这句话：# bind-address 127.0.0.1</li>
-<li>：wq保存并退出，如果出现问题，则使用</li>
-<li>：w !sudo tee %</li>
-</ul>
-<p>**2.修改mysql host</p>
-<ul>
-<li>mysql&gt; use mysql  </li>
-<li>mysql&gt; update user set Host=’%’ where User=’root’</li>
-<li>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION </li>
-<li>mysql&gt; FLUSH PRIVILEGES</li>
-</ul>
-<p>**3.重启mysql</p>
-<ul>
-<li>/etc/init.d/mysql  stop</li>
-<li>/etc/init.d/mysql  start</li>
-</ul>
+            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1.修改配置文件"></a>1.修改配置文件</h2><p>/etc/mysql<br>找到my.cnf，不清楚mysql配置文件编码的话，建议使用<br>vi  /etc/mysql/my.cnf<br>i到bind-address 127.0.0.1<br>注释掉这句话：# bind-address 127.0.0.1<br>：wq保存并退出，如果出现问题，则使用<br>：w !sudo tee %</p>
+<h2 id="2-修改mysql-host"><a href="#2-修改mysql-host" class="headerlink" title="2.修改mysql host"></a>2.修改mysql host</h2><p>mysql&gt; use mysql<br>mysql&gt; update user set Host=’%’ where User=’root’<br>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION<br>mysql&gt; FLUSH PRIVILEGES</p>
+<h2 id="3-重启mysql"><a href="#3-重启mysql" class="headerlink" title="3.重启mysql"></a>3.重启mysql</h2><p>/etc/init.d/mysql  stop<br>/etc/init.d/mysql  start</p>
 
         
         </div>
@@ -304,7 +258,7 @@ i到bind-address 127.0.0.1
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj14yy2kw0003xw0rwfehir7r" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj14z2ezs0005yc0r2qhw2bcs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
