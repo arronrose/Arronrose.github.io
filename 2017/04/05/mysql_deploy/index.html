@@ -5,7 +5,7 @@
     
     <title>mysql deploy | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="MySQL数据库如何实现远程登录1.修改配置文件
+    <meta name="description" content="MySQL数据库如何实现远程登录**1.修改配置文件
 
 /etc/mysql 
 找到my.cnf，不清楚mysql配置文件编码的话，建议使用
@@ -15,12 +15,12 @@ i到bind-address 127.0.0.1
 ：wq保存并退出，如果出现问题，则使用
 ：w !sudo tee %
 
-2.修改mysql host">
+**2.修改mysql ho">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql deploy">
 <meta property="og:url" content="http://yoursite.com/2017/04/05/mysql_deploy/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
-<meta property="og:description" content="MySQL数据库如何实现远程登录1.修改配置文件
+<meta property="og:description" content="MySQL数据库如何实现远程登录**1.修改配置文件
 
 /etc/mysql 
 找到my.cnf，不清楚mysql配置文件编码的话，建议使用
@@ -30,11 +30,11 @@ i到bind-address 127.0.0.1
 ：wq保存并退出，如果出现问题，则使用
 ：w !sudo tee %
 
-2.修改mysql host">
-<meta property="og:updated_time" content="2017-04-05T12:38:20.450Z">
+**2.修改mysql ho">
+<meta property="og:updated_time" content="2017-04-05T12:42:29.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql deploy">
-<meta name="twitter:description" content="MySQL数据库如何实现远程登录1.修改配置文件
+<meta name="twitter:description" content="MySQL数据库如何实现远程登录**1.修改配置文件
 
 /etc/mysql 
 找到my.cnf，不清楚mysql配置文件编码的话，建议使用
@@ -44,7 +44,7 @@ i到bind-address 127.0.0.1
 ：wq保存并退出，如果出现问题，则使用
 ：w !sudo tee %
 
-2.修改mysql host">
+**2.修改mysql ho">
     
 
     
@@ -272,7 +272,7 @@ i到bind-address 127.0.0.1
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><p><strong>1.修改配置文件</strong></p>
+            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><p>**1.修改配置文件</p>
 <ul>
 <li>/etc/mysql </li>
 <li>找到my.cnf，不清楚mysql配置文件编码的话，建议使用</li>
@@ -282,14 +282,14 @@ i到bind-address 127.0.0.1
 <li>：wq保存并退出，如果出现问题，则使用</li>
 <li>：w !sudo tee %</li>
 </ul>
-<p><strong>2.修改mysql host</strong></p>
+<p>**2.修改mysql host</p>
 <ul>
 <li>mysql&gt; use mysql  </li>
-<li>mysql&gt; update user set Host=’%’ where User=’root’;  </li>
-<li>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION;  </li>
-<li>mysql&gt; FLUSH PRIVILEGES; </li>
+<li>mysql&gt; update user set Host=’%’ where User=’root’</li>
+<li>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION </li>
+<li>mysql&gt; FLUSH PRIVILEGES</li>
 </ul>
-<p><strong>3.重启mysql</strong></p>
+<p>**3.重启mysql</p>
 <ul>
 <li>/etc/init.d/mysql  stop</li>
 <li>/etc/init.d/mysql  start</li>
