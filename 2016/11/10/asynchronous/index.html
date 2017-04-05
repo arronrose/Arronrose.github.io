@@ -15,7 +15,7 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
 <meta property="og:description" content="利用回调函数实现异步非阻塞
 var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err,data) {   if (err){       return console.error(err);   }   console.log(data.toString());});console.log(“高佳威end!”);
 上面">
-<meta property="og:updated_time" content="2017-04-05T08:30:23.830Z">
+<meta property="og:updated_time" content="2017-04-05T08:32:05.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="asynchronous">
 <meta name="twitter:description" content="利用回调函数实现异步非阻塞
@@ -251,8 +251,7 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
             <p>利用回调函数实现异步非阻塞</p>
 <p>var fs = require(“fs”);<br>fs.readFile(‘input.txt’,’utf-8’,goajiawei(err,data) {<br>   if (err){<br>       return console.error(err);<br>   }<br>   console.log(data.toString());<br>});<br>console.log(“高佳威end!”);</p>
 <p>上面这段代码等价于：</p>
-<p>function gaojiawei(err,data){<br>    if(err){<br>        return console.error(err);<br>    }<br>    console.log(data.toString());<br>}<br>fs.readFile(‘input.txt’,’utf-8’,gaojiawei)<br>console.log(“高佳威end!”);</p>
-<p>什么是回调函数？</p>
+<p>function gaojiawei(err,data){<br>    if(err){<br>        return console.error(err);<br>    }<br>    console.log(data.toString());<br>}<br>fs.readFile(‘input.txt’,’utf-8’,gaojiawei)<br>console.log(“高佳威end!”);<br><a id="more"></a><br>什么是回调函数？</p>
 <p>我们绕点远路来回答这个问题。</p>
 <p>编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application programming interface，应用编程接口），以供应用程序员使用。所以在抽象层的图示里，库位于应用的底下。</p>
 <p>当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。</p>
@@ -260,7 +259,8 @@ var fs = require(“fs”);fs.readFile(‘input.txt’,’utf-8’,goajiawei(err
 <p>可以看到，回调函数通常和应用处于同一抽象层（因为传入什么样的回调函数是在应用级别决定的）。而回调就成了一个高层调用底层，底层再回过头来调用高层的过程。（我认为）这应该是回调最早的应用之处，也是其得名如此的原因。</p>
 <p>回调机制的优势</p>
 <p>从上面的例子可以看出，回调机制提供了非常大的灵活性。请注意，从现在开始，我们把图中的库函数改称为中间函数了，这是因为回调并不仅仅用在应用和库之间。任何时候，只要想获得类似于上面情况的灵活性，都可以利用回调。</p>
-<p>这种灵活性是怎么实现的呢？乍看起来，回调似乎只是函数间的调用，但仔细一琢磨，可以发现两者之间的一个关键的不同：在回调中，我们利用某种方式，把回调函数像参数一样传入中间函数。可以这么理解，在传入一个回调函数之前，中间函数是不完整的。换句话说，程序可以在运行时，通过登记不同的回调函数，来决定、改变中间函数的行为。这就比简单的函数调用要灵活太多了。请看下面这段Python写成的回调的简单示例：<br><a id="more"></a><br>even.py<br>回调函数1<br>生成一个2k形式的偶数<br>def double(x):<br>    return x * 2</p>
+<p>这种灵活性是怎么实现的呢？乍看起来，回调似乎只是函数间的调用，但仔细一琢磨，可以发现两者之间的一个关键的不同：在回调中，我们利用某种方式，把回调函数像参数一样传入中间函数。可以这么理解，在传入一个回调函数之前，中间函数是不完整的。换句话说，程序可以在运行时，通过登记不同的回调函数，来决定、改变中间函数的行为。这就比简单的函数调用要灵活太多了。请看下面这段Python写成的回调的简单示例：</p>
+<p>even.py<br>回调函数1<br>生成一个2k形式的偶数<br>def double(x):<br>    return x * 2</p>
 <p>回调函数2<br>生成一个4k形式的偶数<br>def quadruple(x):<br>    return x * 4</p>
 <p>callback_demo.py<br>from even import *</p>
 <p>中间函数<br>接受一个生成偶数的函数作为参数<br>返回一个奇数<br>def getOddNumber(k, getEvenNumber):<br>    return 1 + getEvenNumber(k)</p>
@@ -291,7 +291,7 @@ print(i)
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj14prw6k0002fs0r60630vmc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj14pupvy0002xk0rw5wwgvx8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
