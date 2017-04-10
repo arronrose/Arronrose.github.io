@@ -3,25 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Science &amp; Technology For Future</title>
+    <title>callback_function | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="title:callback_function##什么是回调函数？
-我们绕点远路来回答这个问题。
-编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application p">
+    <meta name="description" content="什么是回调函数？我们绕点远路来回答这个问题。
+编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application programming interface，应用编程接口">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Science & Technology For Future">
+<meta property="og:title" content="callback_function">
 <meta property="og:url" content="http://yoursite.com/2017/04/06/callback_function/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
-<meta property="og:description" content="title:callback_function##什么是回调函数？
-我们绕点远路来回答这个问题。
-编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application p">
+<meta property="og:description" content="什么是回调函数？我们绕点远路来回答这个问题。
+编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application programming interface，应用编程接口">
 <meta property="og:image" content="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_b.jpg">
-<meta property="og:updated_time" content="2017-04-06T02:19:56.506Z">
+<meta property="og:updated_time" content="2017-04-10T02:42:23.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Science & Technology For Future">
-<meta name="twitter:description" content="title:callback_function##什么是回调函数？
-我们绕点远路来回答这个问题。
-编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application p">
+<meta name="twitter:title" content="callback_function">
+<meta name="twitter:description" content="什么是回调函数？我们绕点远路来回答这个问题。
+编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application programming interface，应用编程接口">
 <meta name="twitter:image" content="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_b.jpg">
     
 
@@ -221,36 +218,55 @@
     <div class="article-inner">
         
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            callback_function
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/06/callback_function/">
+            <time datetime="2017-04-06T02:19:56.403Z" itemprop="datePublished">2017-04-06</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
             
-            <hr>
-<h2 id="title-callback-function"><a href="#title-callback-function" class="headerlink" title="title:callback_function"></a>title:callback_function</h2><p>##什么是回调函数？</p>
-<p>我们绕点远路来回答这个问题。</p>
+            <h2 id="什么是回调函数？"><a href="#什么是回调函数？" class="headerlink" title="什么是回调函数？"></a>什么是回调函数？</h2><p>我们绕点远路来回答这个问题。</p>
 <p>编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application programming interface，应用编程接口），以供应用程序员使用。所以在抽象层的图示里，库位于应用的底下。</p>
-<p>当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。</p>
-<p>打个比方，有一家旅馆提供叫醒服务，但是要求旅客自己决定叫醒的方法。可以是打客房电话，也可以是派服务员去敲门，睡得死怕耽误事的，还可以要求往自己头上浇盆水。这里，“叫醒”这个行为是旅馆提供的，相当于库函数，但是叫醒的方式是由旅客决定并告诉旅馆的，也就是回调函数。而旅客告诉旅馆怎么叫醒自己的动作，也就是把回调函数传入库函数的动作，称为登记回调函数（to register a callback function）。如下图所示（图片来源：维基百科）：<br><img src="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_b.jpg" data-rawwidth="625" data-rawheight="233" class="origin_image zh-lightbox-thumb" width="625" data-original="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_r.jpg"></p>
+<p>当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。<br><a id="more"></a><br>打个比方，有一家旅馆提供叫醒服务，但是要求旅客自己决定叫醒的方法。可以是打客房电话，也可以是派服务员去敲门，睡得死怕耽误事的，还可以要求往自己头上浇盆水。这里，“叫醒”这个行为是旅馆提供的，相当于库函数，但是叫醒的方式是由旅客决定并告诉旅馆的，也就是回调函数。而旅客告诉旅馆怎么叫醒自己的动作，也就是把回调函数传入库函数的动作，称为登记回调函数（to register a callback function）。如下图所示（图片来源：维基百科）：<br><img src="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_b.jpg" data-rawwidth="625" data-rawheight="233" class="origin_image zh-lightbox-thumb" width="625" data-original="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_r.jpg"></p>
 <p>可以看到，回调函数通常和应用处于同一抽象层（因为传入什么样的回调函数是在应用级别决定的）。而回调就成了一个高层调用底层，底层再回过头来调用高层的过程。（我认为）这应该是回调最早的应用之处，也是其得名如此的原因。</p>
-<p>##回调机制的优势</p>
-<p>从上面的例子可以看出，回调机制提供了非常大的灵活性。请注意，从现在开始，我们把图中的库函数改称为中间函数了，这是因为回调并不仅仅用在应用和库之间。任何时候，只要想获得类似于上面情况的灵活性，都可以利用回调。</p>
+<h2 id="回调机制的优势"><a href="#回调机制的优势" class="headerlink" title="回调机制的优势"></a>回调机制的优势</h2><p>从上面的例子可以看出，回调机制提供了非常大的灵活性。请注意，从现在开始，我们把图中的库函数改称为中间函数了，这是因为回调并不仅仅用在应用和库之间。任何时候，只要想获得类似于上面情况的灵活性，都可以利用回调。</p>
 <p>这种灵活性是怎么实现的呢？乍看起来，回调似乎只是函数间的调用，但仔细一琢磨，可以发现两者之间的一个关键的不同：在回调中，我们利用某种方式，把回调函数像参数一样传入中间函数。可以这么理解，在传入一个回调函数之前，中间函数是不完整的。换句话说，程序可以在运行时，通过登记不同的回调函数，来决定、改变中间函数的行为。这就比简单的函数调用要灵活太多了。请看下面这段Python写成的回调的简单示例：</p>
 <p><code>even.py</code></p>
-<p>###回调函数1<br>生成一个2k形式的偶数</p>
+<h3 id="回调函数1"><a href="#回调函数1" class="headerlink" title="回调函数1"></a>回调函数1</h3><p>生成一个2k形式的偶数</p>
 <pre><code>def double(x):
     return x * 2
-</code></pre><p>###回调函数2<br>生成一个4k形式的偶数</p>
+</code></pre><h3 id="回调函数2"><a href="#回调函数2" class="headerlink" title="回调函数2"></a>回调函数2</h3><p>生成一个4k形式的偶数</p>
 <pre><code>def quadruple(x):
     return x * 4
 </code></pre><p><code>callback_demo.py</code></p>
 <p>from even import *</p>
-<p>###中间函数</p>
-<p>接受一个生成偶数的函数作为参数返回一个奇数</p>
+<h3 id="中间函数"><a href="#中间函数" class="headerlink" title="中间函数"></a>中间函数</h3><p>接受一个生成偶数的函数作为参数返回一个奇数</p>
 <pre><code>def getOddNumber(k, getEvenNumber):
 
     return 1 + getEvenNumber(k)
-</code></pre><p>###起始函数(主函数)</p>
-<pre><code>def main():    
+</code></pre><h3 id="起始函数-主函数"><a href="#起始函数-主函数" class="headerlink" title="起始函数(主函数)"></a>起始函数(主函数)</h3><pre><code>def main():    
     k = 1
     #当需要生成一个2k+1形式的奇数时
     i = getOddNumber(k, double)
@@ -282,7 +298,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1bie80a0001ek0rtx92kh8d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1biko0w00043k0r6iwc7lyi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -435,7 +451,7 @@ if __name__ == &quot;__main__&quot;:
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/04/06/callback_function/" class="title"></a></p>
+                            <p class="item-title"><a href="/2017/04/06/callback_function/" class="title">callback_function</a></p>
                             <p class="item-date"><time datetime="2017-04-06T02:19:56.403Z" itemprop="datePublished">2017-04-06</time></p>
                         </div>
                     </li>

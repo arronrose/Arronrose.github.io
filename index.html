@@ -213,53 +213,16 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <hr>
-<h2 id="title-HEXO部署文档"><a href="#title-HEXO部署文档" class="headerlink" title="title:HEXO部署文档"></a>title:HEXO部署文档</h2><p>##部署步骤</p>
-<p>###一、配置环境</p>
-<p>#####1.安装node.js</p>
-<p>#####2.安装git</p>
-<p>#####3.申请github</p>
-<p>#####4.安装hexo<br>    $ sudo npm install –g hexo</p>
-<p>#####5.初始化<br>    $ hexo init </p>
-<p>#####6.生成静态页面<br>    $ hexo generate</p>
-<p>#####7.本地启动<br>    $ hexo server –p 3000<br>    （端口号本地自定）</p>
-<p>###二、配置gihub</p>
-<p>#####1.建立仓库（repository）</p>
-<ul>
-<li><p>创建仓库名</p>
-<p>  your_name.github.io</p>
-</li>
-<li><p>关联github</p>
-<p>  $ vim _config.yml</p>
-<pre><code>deploy:
-
-type:git (github)
-
-repository: http://github.com/arronrose/Arronrose.github.io.git
-
-branch: master
-</code></pre></li>
-<li><p>部署git在线上</p>
-<p>  npm install hexo-deployer-git –save</p>
-</li>
-<li><p>配置hexo</p>
-<p>  hexo deploy</p>
-</li>
-</ul>
-<p>#####2.部署步骤</p>
-<ul>
-<li>hexo clean</li>
-<li>hexo generate</li>
-<li>hexo deploy</li>
-<li><p>添加文章<br>$ hexo new “my new post”</p>
-<p>  得到G:\blog\source_posts\my-new-post.md</p>
-<p>  修改my-new-post.md（markdown 文件，同HTML，比html精简）</p>
-<pre><code>$ hexo g     等价于 generate
-$ hexo d     等价于 deploy
-</code></pre></li>
-</ul>
-
+            <p><hr>
+<h2 id="title-HEXO部署文档"><a href="#title-HEXO部署文档" class="headerlink" title="title:HEXO部署文档"></a>title:HEXO部署文档</h2><h2 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h2><h3 id="一、配置环境"><a href="#一、配置环境" class="headerlink" title="一、配置环境"></a>一、配置环境</h3><h5 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h5><h5 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h5><h5 id="3-申请github"><a href="#3-申请github" class="headerlink" title="3.申请github"></a>3.申请github</h5><h5 id="4-安装hexo"><a href="#4-安装hexo" class="headerlink" title="4.安装hexo"></a>4.安装hexo</h5><pre><code>$ sudo npm install –g hexo
+</code></pre><h5 id="5-初始化"><a href="#5-初始化" class="headerlink" title="5.初始化"></a>5.初始化</h5><pre><code>$ hexo init 
+</code></pre><h5 id="6-生成静态页面"><a href="#6-生成静态页面" class="headerlink" title="6.生成静态页面"></a>6.生成静态页面</h5><pre><code>$ hexo generate
+</code></pre><h5 id="7-本地启动"><a href="#7-本地启动" class="headerlink" title="7.本地启动"></a>7.本地启动</h5><pre><code>$ hexo server –p 3000
+（端口号本地自定）
+</code></pre></p>
+            <p class="article-more-link">
+                <a href="/2017/04/06/hexo_collocation/#more">查看更多</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -269,7 +232,7 @@ $ hexo d     等价于 deploy
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1bie8210003ek0r31hnk8bj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1biko0w00083k0rgl5s6rjq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -351,58 +314,40 @@ $ hexo d     等价于 deploy
     <div class="article-inner">
         
         
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/06/callback_function/">callback_function</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/06/callback_function/">
+            <time datetime="2017-04-06T02:19:56.403Z" itemprop="datePublished">2017-04-06</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <hr>
-<h2 id="title-callback-function"><a href="#title-callback-function" class="headerlink" title="title:callback_function"></a>title:callback_function</h2><p>##什么是回调函数？</p>
-<p>我们绕点远路来回答这个问题。</p>
+            <p><h2 id="什么是回调函数？"><a href="#什么是回调函数？" class="headerlink" title="什么是回调函数？"></a>什么是回调函数？</h2><p>我们绕点远路来回答这个问题。</p>
 <p>编程分为两类：系统编程（system programming）和应用编程（application programming）。所谓系统编程，简单来说，就是编写库；而应用编程就是利用写好的各种库来编写具某种功用的程序，也就是应用。系统程序员会给自己写的库留下一些接口，即API（application programming interface，应用编程接口），以供应用程序员使用。所以在抽象层的图示里，库位于应用的底下。</p>
-<p>当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。</p>
-<p>打个比方，有一家旅馆提供叫醒服务，但是要求旅客自己决定叫醒的方法。可以是打客房电话，也可以是派服务员去敲门，睡得死怕耽误事的，还可以要求往自己头上浇盆水。这里，“叫醒”这个行为是旅馆提供的，相当于库函数，但是叫醒的方式是由旅客决定并告诉旅馆的，也就是回调函数。而旅客告诉旅馆怎么叫醒自己的动作，也就是把回调函数传入库函数的动作，称为登记回调函数（to register a callback function）。如下图所示（图片来源：维基百科）：<br><img src="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_b.jpg" data-rawwidth="625" data-rawheight="233" class="origin_image zh-lightbox-thumb" width="625" data-original="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_r.jpg"></p>
-<p>可以看到，回调函数通常和应用处于同一抽象层（因为传入什么样的回调函数是在应用级别决定的）。而回调就成了一个高层调用底层，底层再回过头来调用高层的过程。（我认为）这应该是回调最早的应用之处，也是其得名如此的原因。</p>
-<p>##回调机制的优势</p>
-<p>从上面的例子可以看出，回调机制提供了非常大的灵活性。请注意，从现在开始，我们把图中的库函数改称为中间函数了，这是因为回调并不仅仅用在应用和库之间。任何时候，只要想获得类似于上面情况的灵活性，都可以利用回调。</p>
-<p>这种灵活性是怎么实现的呢？乍看起来，回调似乎只是函数间的调用，但仔细一琢磨，可以发现两者之间的一个关键的不同：在回调中，我们利用某种方式，把回调函数像参数一样传入中间函数。可以这么理解，在传入一个回调函数之前，中间函数是不完整的。换句话说，程序可以在运行时，通过登记不同的回调函数，来决定、改变中间函数的行为。这就比简单的函数调用要灵活太多了。请看下面这段Python写成的回调的简单示例：</p>
-<p><code>even.py</code></p>
-<p>###回调函数1<br>生成一个2k形式的偶数</p>
-<pre><code>def double(x):
-    return x * 2
-</code></pre><p>###回调函数2<br>生成一个4k形式的偶数</p>
-<pre><code>def quadruple(x):
-    return x * 4
-</code></pre><p><code>callback_demo.py</code></p>
-<p>from even import *</p>
-<p>###中间函数</p>
-<p>接受一个生成偶数的函数作为参数返回一个奇数</p>
-<pre><code>def getOddNumber(k, getEvenNumber):
-
-    return 1 + getEvenNumber(k)
-</code></pre><p>###起始函数(主函数)</p>
-<pre><code>def main():    
-    k = 1
-    #当需要生成一个2k+1形式的奇数时
-    i = getOddNumber(k, double)
-    print(i)
-    #当需要一个4k+1形式的奇数时
-    i = getOddNumber(k, quadruple)
-    print(i)
-    #当需要一个8k+1形式的奇数时
-    i = getOddNumber(k, lambda x: x * 8)
-    print(i)
-
-if __name__ == &quot;__main__&quot;:
-
-    main()
-</code></pre><p>运行<code>callback_demp.py</code>，输出如下：</p>
-<p>3 5 9</p>
-<p>上面的代码里，给<code>getOddNumber</code>传入不同的回调函数，它的表现也不同，这就是回调机制的优势所在。值得一提的是，上面的第三个回调函数是一个匿名函数。</p>
-<p>易被忽略的第三方</p>
-<p>通过上面的论述可知，中间函数和回调函数是回调的两个必要部分，不过人们往往忽略了回调里的第三位要角，就是中间函数的调用者。绝大多数情况下，这个调用者可以和程序的主函数等同起来，但为了表示区别，我这里把它称为起始函数（如上面的代码中注释所示）。</p>
-<p>之所以特意强调这个第三方，是因为我在网上读相关文章时得到一种印象，很多人把它简单地理解为两个个体之间的来回调用。譬如，很多中文网页在解释“回调”（callback）时，都会提到这么一句话：“If you call me, I will call you back.”我没有查到这句英文的出处。我个人揣测，很多人把起始函数和回调函数看作为一体，大概有两个原因：第一，可能是“回调”这一名字的误导；第二，给中间函数传入什么样的回调函数，是在起始函数里决定的。实际上，回调并不是“你我”两方的互动，而是ABC的三方联动。有了这个清楚的概念，在自己的代码里实现回调时才不容易混淆出错。</p>
-<p>另外，回调实际上有两种：阻塞式回调和延迟式回调。两者的区别在于：阻塞式回调里，回调函数的调用一定发生在起始函数返回之前；而延迟式回调里，回调函数的调用有可能是在起始函数返回之后。这里不打算对这两个概率做更深入的讨论，之所以把它们提出来，也是为了说明强调起始函数的重要性。网上的很多文章，提到这两个概念时，只是笼统地说阻塞式回调发生在主调函数返回之前，却没有明确这个主调函数到底是起始函数还是中间函数，不免让人糊涂，所以这里特意说明一下。另外还请注意，本文中所举的示例均为阻塞式回调。延迟式回调通常牵扯到多线程，我自己还没有完全搞明白，所以这里就不多说了。</p>
-
+<p>当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。<br></p>
+            <p class="article-more-link">
+                <a href="/2017/04/06/callback_function/#more">查看更多</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -412,7 +357,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1bie80a0001ek0rtx92kh8d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1biko0w00043k0r6iwc7lyi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -536,7 +481,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1bie8210006ek0rks65stw6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1biko0h00023k0rxe1m9bfe" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -660,7 +605,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1bie8210004ek0rlsnaoc9j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1biko0w00073k0rlm85l3l1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -831,7 +776,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1bie82g0008ek0rr9zo6cf8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1biko0w00053k0rmt0i07fn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -957,7 +902,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj1bie8210002ek0rqlntqsce" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj1biko0h00013k0rkhh1pjry" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1085,7 +1030,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj1bie8210005ek0rhertufvl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj1biko0h00033k0rld8zhvrf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1207,7 +1152,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/05/Nginx/" data-id="cj1bie80a0000ek0rec8kqrej" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/05/Nginx/" data-id="cj1biko0h00003k0rpirdqs3d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1330,7 +1275,7 @@ if __name__ == &quot;__main__&quot;:
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/05/hello-world/" data-id="cj1bie8210007ek0rir5lj7c1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/05/hello-world/" data-id="cj1biko0w00063k0r606s5dxd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1450,7 +1395,7 @@ if __name__ == &quot;__main__&quot;:
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/04/06/callback_function/" class="title"></a></p>
+                            <p class="item-title"><a href="/2017/04/06/callback_function/" class="title">callback_function</a></p>
                             <p class="item-date"><time datetime="2017-04-06T02:19:56.403Z" itemprop="datePublished">2017-04-06</time></p>
                         </div>
                     </li>
