@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                9
+                10
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -206,6 +206,153 @@
 
             
             <section id="main">
+    <article id="post-mime_type" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/10/mime_type/">mime.type</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/10/mime_type/">
+            <time datetime="2017-04-10T06:04:14.888Z" itemprop="datePublished">2017-04-10</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="常见的MIME类型"><a href="#常见的MIME类型" class="headerlink" title="常见的MIME类型"></a>常见的MIME类型</h2><ul>
+<li>超文本标记语言文本  <pre><code>.htm,.html      text/html 
+</code></pre></li>
+<li>普通文本<pre><code>.txt            text/plain 
+</code></pre></li>
+<li>RTF文本  <pre><code>.rtf            application/rtf 
+</code></pre></li>
+<li>GIF图形 <pre><code>.gif            image/gif 
+</code></pre></li>
+<li>JPEG图形 <pre><code>.ipeg,.jpg      image/jpeg 
+</code></pre></li>
+<li>au声音文件 <pre><code>.au             audio/basic 
+</code></pre></li>
+<li>MIDI音乐文件  <pre><code>.mid,.midi      audio/midi,audio/x-midi 
+</code></pre></li>
+<li>RealAudio音乐文件 <pre><code>.ra, .ram       audio/x-pn-realaudio 
+</code></pre></li>
+<li>MPEG文件  <pre><code>.mpg,.mpeg      video/mpeg 
+</code></pre></li>
+<li>AVI文件   <pre><code>.avi            video/x-msvideo 
+</code></pre></li>
+<li>GZIP文件  <pre><code>.gz             application/x-gzip 
+</code></pre></li>
+<li>TAR文件  <pre><code>.tar            application/x-tar 
+</code></pre></li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj1bzrv7z00085w0rr9mrn029" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/04/10/mime_type/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/10/mime_type/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-hexo_collocation" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -232,7 +379,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1biko0w00083k0rgl5s6rjq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1bzrv7z00075w0r4both01f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -357,7 +504,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1biko0w00043k0r6iwc7lyi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1bzrv7j00035w0rt3dtdgka" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -481,7 +628,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1biko0h00023k0rxe1m9bfe" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1bzrv7j00045w0rrw976ewj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -605,7 +752,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1biko0w00073k0rlm85l3l1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1bzrv7z00095w0rfo8b2rhc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -776,7 +923,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1biko0w00053k0rmt0i07fn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1bzrv7j00055w0rhgln285i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -902,7 +1049,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj1biko0h00013k0rkhh1pjry" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj1bzrv7j00025w0rpzgtq9hu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1030,7 +1177,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj1biko0h00033k0rld8zhvrf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj1bzrv7400015w0rj4m3ij2b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1152,7 +1299,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/05/Nginx/" data-id="cj1biko0h00003k0rpirdqs3d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/05/Nginx/" data-id="cj1bzrv7400005w0rhbbu0cf5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1275,7 +1422,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/05/hello-world/" data-id="cj1biko0w00063k0r606s5dxd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/05/hello-world/" data-id="cj1bzrv7z00065w0rora34t0g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1365,6 +1512,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/04/10/mime_type/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/10/mime_type/" class="title">mime.type</a></p>
+                            <p class="item-date"><time datetime="2017-04-10T06:04:14.888Z" itemprop="datePublished">2017-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/04/06/hexo_collocation/" class="thumbnail">
     
     
@@ -1438,25 +1604,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/04/05/git_conclusion/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/04/05/git_conclusion/" class="title">git conclusion</a></p>
-                            <p class="item-date"><time datetime="2017-04-05T08:49:59.000Z" itemprop="datePublished">2017-04-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1468,7 +1615,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 

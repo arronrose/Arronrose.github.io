@@ -3,21 +3,51 @@
 <head>
     <meta charset="utf-8">
     
-    <title>mysql deploy | Science &amp; Technology For Future</title>
+    <title>mime.type | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="MySQL数据库如何实现远程登录1.修改配置文件/etc/mysql找到my.cnf，不清楚mysql配置文件编码的话，建议使用vi  /etc/mysql/my.cnfi到bind-address 127.0.0.1注释掉这句话：# bind-address 127.0.0.1：wq保存并退出，如果出现问题，则使用：w !sudo tee %
-2.修改mysql hostmysql&amp;gt; us">
+    <meta name="description" content="常见的MIME类型
+超文本标记语言文本  .htm,.html      text/html 
+
+普通文本.txt            text/plain 
+
+RTF文本  .rtf            application/rtf 
+
+GIF图形 .gif            image/gif 
+
+JPEG图形 .ipeg,.jpg      image/jpeg 
+
+au声音文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql deploy">
-<meta property="og:url" content="http://yoursite.com/2017/04/05/mysql_deploy/index.html">
+<meta property="og:title" content="mime.type">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/mime_type/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
-<meta property="og:description" content="MySQL数据库如何实现远程登录1.修改配置文件/etc/mysql找到my.cnf，不清楚mysql配置文件编码的话，建议使用vi  /etc/mysql/my.cnfi到bind-address 127.0.0.1注释掉这句话：# bind-address 127.0.0.1：wq保存并退出，如果出现问题，则使用：w !sudo tee %
-2.修改mysql hostmysql&amp;gt; us">
-<meta property="og:updated_time" content="2017-04-05T12:49:23.114Z">
+<meta property="og:description" content="常见的MIME类型
+超文本标记语言文本  .htm,.html      text/html 
+
+普通文本.txt            text/plain 
+
+RTF文本  .rtf            application/rtf 
+
+GIF图形 .gif            image/gif 
+
+JPEG图形 .ipeg,.jpg      image/jpeg 
+
+au声音文件">
+<meta property="og:updated_time" content="2017-04-10T06:04:14.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql deploy">
-<meta name="twitter:description" content="MySQL数据库如何实现远程登录1.修改配置文件/etc/mysql找到my.cnf，不清楚mysql配置文件编码的话，建议使用vi  /etc/mysql/my.cnfi到bind-address 127.0.0.1注释掉这句话：# bind-address 127.0.0.1：wq保存并退出，如果出现问题，则使用：w !sudo tee %
-2.修改mysql hostmysql&amp;gt; us">
+<meta name="twitter:title" content="mime.type">
+<meta name="twitter:description" content="常见的MIME类型
+超文本标记语言文本  .htm,.html      text/html 
+
+普通文本.txt            text/plain 
+
+RTF文本  .rtf            application/rtf 
+
+GIF图形 .gif            image/gif 
+
+JPEG图形 .ipeg,.jpg      image/jpeg 
+
+au声音文件">
     
 
     
@@ -212,7 +242,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-mysql_deploy" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-mime_type" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -220,7 +250,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            mysql deploy
+            mime.type
         </h1>
     
 
@@ -229,8 +259,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/04/05/mysql_deploy/">
-            <time datetime="2017-04-05T12:25:15.353Z" itemprop="datePublished">2017-04-05</time>
+        <a href="/2017/04/10/mime_type/">
+            <time datetime="2017-04-10T06:04:14.888Z" itemprop="datePublished">2017-04-10</time>
         </a>
     </div>
 
@@ -245,9 +275,32 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1.修改配置文件"></a>1.修改配置文件</h2><p>/etc/mysql<br>找到my.cnf，不清楚mysql配置文件编码的话，建议使用<br>vi  /etc/mysql/my.cnf<br>i到bind-address 127.0.0.1<br>注释掉这句话：# bind-address 127.0.0.1<br>：wq保存并退出，如果出现问题，则使用<br>：w !sudo tee %</p>
-<h2 id="2-修改mysql-host"><a href="#2-修改mysql-host" class="headerlink" title="2.修改mysql host"></a>2.修改mysql host</h2><p>mysql&gt; use mysql<br>mysql&gt; update user set Host=’%’ where User=’root’<br>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION<br>mysql&gt; FLUSH PRIVILEGES</p>
-<h2 id="3-重启mysql"><a href="#3-重启mysql" class="headerlink" title="3.重启mysql"></a>3.重启mysql</h2><p>/etc/init.d/mysql  stop<br>/etc/init.d/mysql  start</p>
+            <h2 id="常见的MIME类型"><a href="#常见的MIME类型" class="headerlink" title="常见的MIME类型"></a>常见的MIME类型</h2><ul>
+<li>超文本标记语言文本  <pre><code>.htm,.html      text/html 
+</code></pre></li>
+<li>普通文本<pre><code>.txt            text/plain 
+</code></pre></li>
+<li>RTF文本  <pre><code>.rtf            application/rtf 
+</code></pre></li>
+<li>GIF图形 <pre><code>.gif            image/gif 
+</code></pre></li>
+<li>JPEG图形 <pre><code>.ipeg,.jpg      image/jpeg 
+</code></pre></li>
+<li>au声音文件 <pre><code>.au             audio/basic 
+</code></pre></li>
+<li>MIDI音乐文件  <pre><code>.mid,.midi      audio/midi,audio/x-midi 
+</code></pre></li>
+<li>RealAudio音乐文件 <pre><code>.ra, .ram       audio/x-pn-realaudio 
+</code></pre></li>
+<li>MPEG文件  <pre><code>.mpg,.mpeg      video/mpeg 
+</code></pre></li>
+<li>AVI文件   <pre><code>.avi            video/x-msvideo 
+</code></pre></li>
+<li>GZIP文件  <pre><code>.gz             application/x-gzip 
+</code></pre></li>
+<li>TAR文件  <pre><code>.tar            application/x-tar 
+</code></pre></li>
+</ul>
 
         
         </div>
@@ -258,7 +311,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1bzrv7z00095w0rfo8b2rhc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj1bzrv7z00085w0rr9mrn029" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -326,7 +379,7 @@
 
             
     
-        <a href="http://yoursite.com/2017/04/05/mysql_deploy/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/05/mysql_deploy/">评论</a>
+        <a href="http://yoursite.com/2017/04/10/mime_type/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/10/mime_type/">评论</a>
     
 
         </footer>
@@ -335,19 +388,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/04/05/crontab_time/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    crontab
-                
-            </div>
-        </a>
     
-    
-        <a href="/2017/04/05/git_conclusion/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/04/06/hexo_collocation/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">git conclusion</div>
+            <div class="article-nav-title"></div>
         </a>
     
 </nav>
@@ -526,9 +570,9 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2017/04/05/mysql_deploy/';
+            this.page.url = 'http://yoursite.com/2017/04/10/mime_type/';
         
-        this.page.identifier = 'mysql_deploy';
+        this.page.identifier = 'mime_type';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
