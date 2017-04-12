@@ -239,22 +239,20 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="1-图表基本配置"><a href="#1-图表基本配置" class="headerlink" title="1.图表基本配置"></a>1.图表基本配置</h1><pre><code>// 初始化echarts示例mapChart
+            <h2 id="1-图表基本配置"><a href="#1-图表基本配置" class="headerlink" title="1.图表基本配置"></a>1.图表基本配置</h2><pre><code>// 初始化echarts示例mapChart
 var mapChart = echarts.init(document.getElementById(&apos;mapcontainer&apos;));
 
 // mapChart的配置
 var option = {
 
 };
-</code></pre><h1 id="2-新建一个地理坐标系-geo-，地图类型为中国地图"><a href="#2-新建一个地理坐标系-geo-，地图类型为中国地图" class="headerlink" title="2.新建一个地理坐标系 geo ，地图类型为中国地图"></a>2.新建一个地理坐标系 geo ，地图类型为中国地图</h1><pre><code>var option = {
+</code></pre><h2 id="2-新建一个地理坐标系-geo-，地图类型为中国地图"><a href="#2-新建一个地理坐标系-geo-，地图类型为中国地图" class="headerlink" title="2.新建一个地理坐标系 geo ，地图类型为中国地图"></a>2.新建一个地理坐标系 geo ，地图类型为中国地图</h2><pre><code>var option = {
 geo: {
       map: &apos;china&apos;
   }
-</code></pre><blockquote>
-<p>geo.map 属性定义该地理坐标系中的地图数据，这里我们要用 china.js ，设置map值为 ‘china’ 。<br>这里需要注意，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’ ，但如果要引用省市自治区地图 map 值为简体中文，例如 beijing.js ，map 值为 ’北京’ 。</p>
-<h1 id="3-调用-setOption-option-为图表设置配置项"><a href="#3-调用-setOption-option-为图表设置配置项" class="headerlink" title="3.调用 setOption(option) 为图表设置配置项"></a>3.调用 setOption(option) 为图表设置配置项</h1><pre><code>mapChart.setOption(option);
-</code></pre><h1 id="4-基本的地图设置"><a href="#4-基本的地图设置" class="headerlink" title="4.基本的地图设置"></a>4.基本的地图设置</h1></blockquote>
-<pre><code>var option = {
+</code></pre><p><em>geo.map 属性定义该地理坐标系中的地图数据，这里我们要用 china.js ，设置map值为 ‘china’ 。这里需要注意，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’ ，但如果要引用省市自治区地图ap 值为简体中文，例如 beijing.js ，map 值为 ’北京’ 。</em></p>
+<h2 id="3-调用-setOption-option-为图表设置配置项"><a href="#3-调用-setOption-option-为图表设置配置项" class="headerlink" title="3.调用 setOption(option) 为图表设置配置项"></a>3.调用 setOption(option) 为图表设置配置项</h2><pre><code>mapChart.setOption(option);
+</code></pre><h2 id="4-基本的地图设置"><a href="#4-基本的地图设置" class="headerlink" title="4.基本的地图设置"></a>4.基本的地图设置</h2><pre><code>var option = {
 geo: {
     map: &apos;china&apos;,
 
@@ -270,7 +268,7 @@ geo: {
 },
 backgroundColor: &apos;#404a59&apos;,          // 图表背景色
 }
-</code></pre><h1 id="5-绘制散点图-加载数据"><a href="#5-绘制散点图-加载数据" class="headerlink" title="5.绘制散点图(加载数据)"></a>5.绘制散点图(加载数据)</h1><ol>
+</code></pre><h2 id="5-绘制散点图-加载数据"><a href="#5-绘制散点图-加载数据" class="headerlink" title="5.绘制散点图(加载数据)"></a>5.绘制散点图(加载数据)</h2><ol>
 <li><p>新建散点图 series</p>
 <ul>
 <li><p>在 option 中添加一个 series ， series 的类型为散点图 scatter ，坐标系为地理坐标系 geo</p>
@@ -354,7 +352,7 @@ series: [
         }
         }
    }
-</code></pre><h1 id="6-结果图"><a href="#6-结果图" class="headerlink" title="6.结果图"></a>6.结果图</h1><p><a href="http://echarts.baidu.com/demo.html#scatter-map" title="echarts官网散点图实例" target="_blank" rel="external">http://echarts.baidu.com/demo.html#scatter-map</a></p>
+</code></pre><h2 id="6-结果图"><a href="#6-结果图" class="headerlink" title="6.结果图"></a>6.结果图</h2><p><a href="http://echarts.baidu.com/demo.html#scatter-map" title="echarts官网散点图实例" target="_blank" rel="external">http://echarts.baidu.com/demo.html#scatter-map</a></p>
 </li>
 </ol>
 
@@ -367,7 +365,7 @@ series: [
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj1eoo2uv0005ds0rhvsoeyjm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj1eov2zl0006pk0r3v1omi1i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -518,7 +516,7 @@ series: [
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj1eoo2uv0004ds0rwd8wcz2e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj1eov2zj0005pk0rzoxxagwo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -670,7 +668,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1eoo2vp000bds0rm98j400j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1eov302000cpk0rioyzvlu7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -817,7 +815,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj1eoo2v50008ds0rr1n61ur7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj1eov2zx000apk0rmah2o7p3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -945,7 +943,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1eoo2vf000ads0rmiz5hj4h" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1eov2zu0009pk0r2dn4ieve" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1070,7 +1068,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1eoo2ul0002ds0r9tuqltjt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1eov2zg0004pk0rqjijw1vo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1194,7 +1192,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1eoo2uv0003ds0rng6q6qj7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1eov2ze0003pk0r73smhzdl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1318,7 +1316,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1eoo2vf0009ds0r1le5lhog" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1eov300000bpk0ryt9rj5lg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1489,7 +1487,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1eoo2v50006ds0rt0c0cgt8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1eov2zm0007pk0rcu2r32ro" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1615,7 +1613,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj1eoo2ub0000ds0rr1v21wja" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj1eov2za0002pk0rwys932sb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

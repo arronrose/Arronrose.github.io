@@ -27,7 +27,7 @@ var option = {
 };
 2.新建一个地理坐标系 geo ，地图类型为中国地图var option = {
 geo: {">
-<meta property="og:updated_time" content="2017-04-12T07:54:39.028Z">
+<meta property="og:updated_time" content="2017-04-12T08:02:32.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="echarts collocation china_map (geo)">
 <meta name="twitter:description" content="1.图表基本配置// 初始化echarts示例mapChart
@@ -266,22 +266,20 @@ geo: {">
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="1-图表基本配置"><a href="#1-图表基本配置" class="headerlink" title="1.图表基本配置"></a>1.图表基本配置</h1><pre><code>// 初始化echarts示例mapChart
+            <h2 id="1-图表基本配置"><a href="#1-图表基本配置" class="headerlink" title="1.图表基本配置"></a>1.图表基本配置</h2><pre><code>// 初始化echarts示例mapChart
 var mapChart = echarts.init(document.getElementById(&apos;mapcontainer&apos;));
 
 // mapChart的配置
 var option = {
 
 };
-</code></pre><h1 id="2-新建一个地理坐标系-geo-，地图类型为中国地图"><a href="#2-新建一个地理坐标系-geo-，地图类型为中国地图" class="headerlink" title="2.新建一个地理坐标系 geo ，地图类型为中国地图"></a>2.新建一个地理坐标系 geo ，地图类型为中国地图</h1><pre><code>var option = {
+</code></pre><h2 id="2-新建一个地理坐标系-geo-，地图类型为中国地图"><a href="#2-新建一个地理坐标系-geo-，地图类型为中国地图" class="headerlink" title="2.新建一个地理坐标系 geo ，地图类型为中国地图"></a>2.新建一个地理坐标系 geo ，地图类型为中国地图</h2><pre><code>var option = {
 geo: {
       map: &apos;china&apos;
   }
-</code></pre><blockquote>
-<p>geo.map 属性定义该地理坐标系中的地图数据，这里我们要用 china.js ，设置map值为 ‘china’ 。<br>这里需要注意，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’ ，但如果要引用省市自治区地图 map 值为简体中文，例如 beijing.js ，map 值为 ’北京’ 。</p>
-<h1 id="3-调用-setOption-option-为图表设置配置项"><a href="#3-调用-setOption-option-为图表设置配置项" class="headerlink" title="3.调用 setOption(option) 为图表设置配置项"></a>3.调用 setOption(option) 为图表设置配置项</h1><pre><code>mapChart.setOption(option);
-</code></pre><h1 id="4-基本的地图设置"><a href="#4-基本的地图设置" class="headerlink" title="4.基本的地图设置"></a>4.基本的地图设置</h1></blockquote>
-<pre><code>var option = {
+</code></pre><p><em>geo.map 属性定义该地理坐标系中的地图数据，这里我们要用 china.js ，设置map值为 ‘china’ 。这里需要注意，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’ ，但如果要引用省市自治区地图ap 值为简体中文，例如 beijing.js ，map 值为 ’北京’ 。</em></p>
+<h2 id="3-调用-setOption-option-为图表设置配置项"><a href="#3-调用-setOption-option-为图表设置配置项" class="headerlink" title="3.调用 setOption(option) 为图表设置配置项"></a>3.调用 setOption(option) 为图表设置配置项</h2><pre><code>mapChart.setOption(option);
+</code></pre><h2 id="4-基本的地图设置"><a href="#4-基本的地图设置" class="headerlink" title="4.基本的地图设置"></a>4.基本的地图设置</h2><pre><code>var option = {
 geo: {
     map: &apos;china&apos;,
 
@@ -297,7 +295,7 @@ geo: {
 },
 backgroundColor: &apos;#404a59&apos;,          // 图表背景色
 }
-</code></pre><h1 id="5-绘制散点图-加载数据"><a href="#5-绘制散点图-加载数据" class="headerlink" title="5.绘制散点图(加载数据)"></a>5.绘制散点图(加载数据)</h1><ol>
+</code></pre><h2 id="5-绘制散点图-加载数据"><a href="#5-绘制散点图-加载数据" class="headerlink" title="5.绘制散点图(加载数据)"></a>5.绘制散点图(加载数据)</h2><ol>
 <li><p>新建散点图 series</p>
 <ul>
 <li><p>在 option 中添加一个 series ， series 的类型为散点图 scatter ，坐标系为地理坐标系 geo</p>
@@ -381,7 +379,7 @@ series: [
         }
         }
    }
-</code></pre><h1 id="6-结果图"><a href="#6-结果图" class="headerlink" title="6.结果图"></a>6.结果图</h1><p><a href="http://echarts.baidu.com/demo.html#scatter-map" title="echarts官网散点图实例" target="_blank" rel="external">http://echarts.baidu.com/demo.html#scatter-map</a></p>
+</code></pre><h2 id="6-结果图"><a href="#6-结果图" class="headerlink" title="6.结果图"></a>6.结果图</h2><p><a href="http://echarts.baidu.com/demo.html#scatter-map" title="echarts官网散点图实例" target="_blank" rel="external">http://echarts.baidu.com/demo.html#scatter-map</a></p>
 </li>
 </ol>
 
@@ -394,7 +392,7 @@ series: [
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj1eoo2uv0005ds0rhvsoeyjm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj1eov2zl0006pk0r3v1omi1i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
