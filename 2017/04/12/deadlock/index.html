@@ -3,30 +3,60 @@
 <head>
     <meta charset="utf-8">
     
-    <title>HEXO collocation | Science &amp; Technology For Future</title>
+    <title>Deadlock | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="部署步骤一、配置环境1.安装node.js2.安装git3.申请github4.安装hexo$ sudo npm install –g hexo
-5.初始化$ hexo init 
-6.生成静态页面$ hexo generate
-7.本地启动$ hexo server –p 3000
-（端口号本地自定）">
+    <meta name="description" content="1.死锁的定义如果一个进程集合中的每个进程都在等待只能由该进程集合中其他进程才能引发的事件，那么该进程集合就是死锁的。
+2.死锁产生的原因
+因为系统资源不足。
+
+进程运行推进的顺序不合适。
+
+资源分配不当等。
+
+
+3.死锁产生的必要条件
+互斥条件：每个资源要么已经分配给了一个进程，要么就是可用的。
+
+占有和等待条件：已经得到了某个资源的进程可以再请求新的资源。
+
+不可抢占条件：已经分配给一个进程的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HEXO collocation">
-<meta property="og:url" content="http://yoursite.com/2017/04/06/hexo_collocation/index.html">
+<meta property="og:title" content="Deadlock">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/deadlock/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
-<meta property="og:description" content="部署步骤一、配置环境1.安装node.js2.安装git3.申请github4.安装hexo$ sudo npm install –g hexo
-5.初始化$ hexo init 
-6.生成静态页面$ hexo generate
-7.本地启动$ hexo server –p 3000
-（端口号本地自定）">
-<meta property="og:updated_time" content="2017-04-12T06:45:25.978Z">
+<meta property="og:description" content="1.死锁的定义如果一个进程集合中的每个进程都在等待只能由该进程集合中其他进程才能引发的事件，那么该进程集合就是死锁的。
+2.死锁产生的原因
+因为系统资源不足。
+
+进程运行推进的顺序不合适。
+
+资源分配不当等。
+
+
+3.死锁产生的必要条件
+互斥条件：每个资源要么已经分配给了一个进程，要么就是可用的。
+
+占有和等待条件：已经得到了某个资源的进程可以再请求新的资源。
+
+不可抢占条件：已经分配给一个进程的">
+<meta property="og:updated_time" content="2017-04-12T07:03:52.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEXO collocation">
-<meta name="twitter:description" content="部署步骤一、配置环境1.安装node.js2.安装git3.申请github4.安装hexo$ sudo npm install –g hexo
-5.初始化$ hexo init 
-6.生成静态页面$ hexo generate
-7.本地启动$ hexo server –p 3000
-（端口号本地自定）">
+<meta name="twitter:title" content="Deadlock">
+<meta name="twitter:description" content="1.死锁的定义如果一个进程集合中的每个进程都在等待只能由该进程集合中其他进程才能引发的事件，那么该进程集合就是死锁的。
+2.死锁产生的原因
+因为系统资源不足。
+
+进程运行推进的顺序不合适。
+
+资源分配不当等。
+
+
+3.死锁产生的必要条件
+互斥条件：每个资源要么已经分配给了一个进程，要么就是可用的。
+
+占有和等待条件：已经得到了某个资源的进程可以再请求新的资源。
+
+不可抢占条件：已经分配给一个进程的">
     
 
     
@@ -221,7 +251,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-hexo_collocation" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-deadlock" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -229,7 +259,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            HEXO collocation
+            Deadlock
         </h1>
     
 
@@ -238,8 +268,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/04/06/hexo_collocation/">
-            <time datetime="2017-04-06T02:30:00.824Z" itemprop="datePublished">2017-04-06</time>
+        <a href="/2017/04/12/deadlock/">
+            <time datetime="2017-04-12T07:09:03.924Z" itemprop="datePublished">2017-04-12</time>
         </a>
     </div>
 
@@ -254,43 +284,35 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h2><h3 id="一、配置环境"><a href="#一、配置环境" class="headerlink" title="一、配置环境"></a>一、配置环境</h3><h5 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h5><h5 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h5><h5 id="3-申请github"><a href="#3-申请github" class="headerlink" title="3.申请github"></a>3.申请github</h5><h5 id="4-安装hexo"><a href="#4-安装hexo" class="headerlink" title="4.安装hexo"></a>4.安装hexo</h5><pre><code>$ sudo npm install –g hexo
-</code></pre><h5 id="5-初始化"><a href="#5-初始化" class="headerlink" title="5.初始化"></a>5.初始化</h5><pre><code>$ hexo init 
-</code></pre><h5 id="6-生成静态页面"><a href="#6-生成静态页面" class="headerlink" title="6.生成静态页面"></a>6.生成静态页面</h5><pre><code>$ hexo generate
-</code></pre><h5 id="7-本地启动"><a href="#7-本地启动" class="headerlink" title="7.本地启动"></a>7.本地启动</h5><pre><code>$ hexo server –p 3000
-（端口号本地自定）
-</code></pre><a id="more"></a>
-<h3 id="二、配置gihub"><a href="#二、配置gihub" class="headerlink" title="二、配置gihub"></a>二、配置gihub</h3><h5 id="1-建立仓库（repository）"><a href="#1-建立仓库（repository）" class="headerlink" title="1.建立仓库（repository）"></a>1.建立仓库（repository）</h5><ul>
-<li><p>创建仓库名</p>
-<p>  your_name.github.io</p>
+            <h2 id="1-死锁的定义"><a href="#1-死锁的定义" class="headerlink" title="1.死锁的定义"></a>1.死锁的定义</h2><pre><code>如果一个进程集合中的每个进程都在等待只能由该进程集合中其他进程才能引发的事件，那么该进程集合就是死锁的。
+</code></pre><h2 id="2-死锁产生的原因"><a href="#2-死锁产生的原因" class="headerlink" title="2.死锁产生的原因"></a>2.死锁产生的原因</h2><ul>
+<li><p>因为系统资源不足。</p>
 </li>
-<li><p>关联github</p>
-<p>  $ vim _config.yml</p>
-<pre><code>deploy:
-
-type:git (github)
-
-repository: http://github.com/arronrose/Arronrose.github.io.git
-
-branch: master
-</code></pre></li>
-<li><p>部署git在线上</p>
-<p>  npm install hexo-deployer-git –save</p>
+<li><p>进程运行推进的顺序不合适。</p>
 </li>
-<li><p>配置hexo</p>
-<p>  hexo deploy</p>
+<li><p>资源分配不当等。</p>
 </li>
 </ul>
-<h5 id="2-部署步骤"><a href="#2-部署步骤" class="headerlink" title="2.部署步骤"></a>2.部署步骤</h5><ul>
-<li>hexo clean</li>
-<li>hexo generate</li>
-<li>hexo deploy</li>
-<li><p>添加文章<br>$ hexo new “my new post”</p>
-<p>  得到G:\blog\source_posts\my-new-post.md</p>
-<p>  修改my-new-post.md（markdown 文件，同HTML，比html精简）</p>
-<pre><code>$ hexo g     等价于 generate
-$ hexo d     等价于 deploy
-</code></pre></li>
+<h2 id="3-死锁产生的必要条件"><a href="#3-死锁产生的必要条件" class="headerlink" title="3.死锁产生的必要条件"></a>3.死锁产生的必要条件</h2><ul>
+<li><p>互斥条件：每个资源要么已经分配给了一个进程，要么就是可用的。</p>
+</li>
+<li><p>占有和等待条件：已经得到了某个资源的进程可以再请求新的资源。</p>
+</li>
+<li><p>不可抢占条件：已经分配给一个进程的资源不能强制性地被抢占，只能被占有它的进程显式地释放；</p>
+</li>
+<li><p>环路等待条件：死锁发生时，系统中一定有两个或者两个以上的进程组成的一条环路，该环路中的每个进程都在等待着下一个进程所占有的资源。</p>
+<p>  这四个条件是死锁的必要条件，只要系统发生死锁，这些条件必然成立，而只要上述条件之一不满足，就不会发生死锁。</p>
+</li>
+</ul>
+<h2 id="4-处理死锁的四种策略"><a href="#4-处理死锁的四种策略" class="headerlink" title="4.处理死锁的四种策略"></a>4.处理死锁的四种策略</h2><ol>
+<li>鸵鸟策略（忽略死锁）</li>
+<li>检测死锁并恢复</li>
+<li>仔细对资源进行分配，动态地避免死锁</li>
+<li>通过破坏引起死锁的四个必要条件之一，防止死锁的产生</li>
+</ol>
+<h2 id="5-避免死锁的主要算法"><a href="#5-避免死锁的主要算法" class="headerlink" title="5.避免死锁的主要算法"></a>5.避免死锁的主要算法</h2><p><strong>银行家算法</strong></p>
+<ul>
+<li>避免死锁的主要算法是基于一个<code>安全状态</code>的概念。在任何时刻，如果没有死锁发生，并且即使所有进程忽然请求对资源的最大请求，也仍然存在某种调度次序能够使得每一个进程运行完毕，则称该状态是安全的。从安全状态出发，系统能够保证所有进程都能完成，而从不安全状态出发，就没有这样的保证。银行家算法从判断对请求的满足是否会进入不安全状态，如果是，就拒绝请求，如果满足请求后系统仍然是安全的，就予以分配。不安全状态不一定引起死锁，因为客户不一定需要其最大贷款额度。*</li>
 </ul>
 
         
@@ -302,7 +324,7 @@ $ hexo d     等价于 deploy
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1en0laj00072c0r0dd7unhd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj1en0la400052c0rztlzwms9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -370,7 +392,7 @@ $ hexo d     等价于 deploy
 
             
     
-        <a href="http://yoursite.com/2017/04/06/hexo_collocation/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/06/hexo_collocation/">评论</a>
+        <a href="http://yoursite.com/2017/04/12/deadlock/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/12/deadlock/">评论</a>
     
 
         </footer>
@@ -379,19 +401,10 @@ $ hexo d     等价于 deploy
         
 <nav id="article-nav">
     
-        <a href="/2017/04/10/mime_type/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    mime.type
-                
-            </div>
-        </a>
     
-    
-        <a href="/2017/04/06/callback_function/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/04/12/single_instance/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">callback_function</div>
+            <div class="article-nav-title">single instance</div>
         </a>
     
 </nav>
@@ -570,9 +583,9 @@ $ hexo d     等价于 deploy
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2017/04/06/hexo_collocation/';
+            this.page.url = 'http://yoursite.com/2017/04/12/deadlock/';
         
-        this.page.identifier = 'hexo_collocation';
+        this.page.identifier = 'deadlock';
     };
     (function() { 
         var d = document, s = d.createElement('script');  

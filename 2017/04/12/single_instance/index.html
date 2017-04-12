@@ -21,7 +21,7 @@ class Singleton(object):
 如果cls._instance不为None,直接返回cls._instance
 class Singleton(object):
     def __new__(cls, *args, **kw):">
-<meta property="og:updated_time" content="2017-04-12T06:49:54.464Z">
+<meta property="og:updated_time" content="2017-04-12T07:08:57.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="single instance">
 <meta name="twitter:description" content="单例模式（四种方法）方法1  实现new方法
@@ -172,7 +172,7 @@ class Singleton(object):
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                11
+                12
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -273,10 +273,9 @@ class MyClass(Singleton):
 </code></pre><p>  one = MyClass()</p>
 <p>  two = MyClass()</p>
 </li>
-<li><p>two.a = 3</p>
-</li>
 </ul>
 <blockquote>
+<p>two.a = 3</p>
 <pre><code>print one.a
 </code></pre><p>one和two完全相同,可以用id(), ==, is检测</p>
 <pre><code>print id(one)
@@ -305,11 +304,9 @@ class MyClass2(Borg):
 </code></pre><p>  one = MyClass2()</p>
 <p>  two = MyClass2()</p>
 </li>
-<li><p>two.a = 3</p>
-</li>
 </ul>
 <blockquote>
-<p>one和two是两个不同的对象,id, ==, is对比结果可看出</p>
+<p>two.a = 3</p>
 <pre><code>print one.a
 </code></pre><p>3</p>
 <pre><code>print id(one)
@@ -342,12 +339,11 @@ class MyClass3(object):
 </code></pre><p>  one = MyClass3()</p>
 <p>  two = MyClass3()</p>
 </li>
-<li><p>two.a = 3</p>
-</li>
 </ul>
-<p>&gt;<br>    print one.a</p>
 <blockquote>
-<p>3</p>
+<p>two.a = 3</p>
+<pre><code>print one.a
+</code></pre><p>3</p>
 <pre><code>print id(one)
 </code></pre><p>31495472</p>
 <pre><code>id(two)
@@ -377,12 +373,11 @@ class MyClass4(object):
 </code></pre><p>  one = MyClass4()</p>
 <p>  two = MyClass4()</p>
 </li>
-<li><p>two.a = 3</p>
-</li>
 </ul>
-<p>&gt;<br>    print one.a </p>
 <blockquote>
-<p>3</p>
+<p>two.a = 3</p>
+<pre><code>print one.a 
+</code></pre><p>3</p>
 <pre><code>print id(one)
 </code></pre><p>29660784</p>
 <pre><code>print id(two)
@@ -408,7 +403,7 @@ print one.x
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1ema39g000at00r6hgabkye" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1en0law000b2c0rwujtg131" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -485,6 +480,15 @@ print one.x
         
 <nav id="article-nav">
     
+        <a href="/2017/04/12/deadlock/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Deadlock
+                
+            </div>
+        </a>
+    
     
         <a href="/2017/04/10/mime_type/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
@@ -518,6 +522,25 @@ print one.x
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/12/deadlock/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/12/deadlock/" class="title">Deadlock</a></p>
+                            <p class="item-date"><time datetime="2017-04-12T07:09:03.924Z" itemprop="datePublished">2017-04-12</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -595,25 +618,6 @@ print one.x
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/04/05/crontab_time/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/04/05/crontab_time/" class="title">crontab</a></p>
-                            <p class="item-date"><time datetime="2017-04-05T13:35:42.719Z" itemprop="datePublished">2017-04-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -625,7 +629,7 @@ print one.x
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
