@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                12
+                13
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -206,6 +206,245 @@
 
             
             <section id="main">
+    <article id="post-echarts_chinamap" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/12/echarts_chinamap/">echarts collocation china_map (geo)</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/12/echarts_chinamap/">
+            <time datetime="2017-04-12T07:54:38.989Z" itemprop="datePublished">2017-04-12</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="1-图表基本配置"><a href="#1-图表基本配置" class="headerlink" title="1.图表基本配置"></a>1.图表基本配置</h1><pre><code>// 初始化echarts示例mapChart
+var mapChart = echarts.init(document.getElementById(&apos;mapcontainer&apos;));
+
+// mapChart的配置
+var option = {
+
+};
+</code></pre><h1 id="2-新建一个地理坐标系-geo-，地图类型为中国地图"><a href="#2-新建一个地理坐标系-geo-，地图类型为中国地图" class="headerlink" title="2.新建一个地理坐标系 geo ，地图类型为中国地图"></a>2.新建一个地理坐标系 geo ，地图类型为中国地图</h1><pre><code>var option = {
+geo: {
+      map: &apos;china&apos;
+  }
+</code></pre><blockquote>
+<p>geo.map 属性定义该地理坐标系中的地图数据，这里我们要用 china.js ，设置map值为 ‘china’ 。<br>这里需要注意，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’ ，但如果要引用省市自治区地图 map 值为简体中文，例如 beijing.js ，map 值为 ’北京’ 。</p>
+<h1 id="3-调用-setOption-option-为图表设置配置项"><a href="#3-调用-setOption-option-为图表设置配置项" class="headerlink" title="3.调用 setOption(option) 为图表设置配置项"></a>3.调用 setOption(option) 为图表设置配置项</h1><pre><code>mapChart.setOption(option);
+</code></pre><h1 id="4-基本的地图设置"><a href="#4-基本的地图设置" class="headerlink" title="4.基本的地图设置"></a>4.基本的地图设置</h1></blockquote>
+<pre><code>var option = {
+geo: {
+    map: &apos;china&apos;,
+
+    itemStyle: {                    // 定义样式
+        normal: {                    // 普通状态下的样式
+            areaColor: &apos;#323c48&apos;,
+            borderColor: &apos;#111&apos;
+        },
+        emphasis: {                    // 高亮状态下的样式
+            areaColor: &apos;#2a333d&apos;
+        }
+    }
+},
+backgroundColor: &apos;#404a59&apos;,          // 图表背景色
+}
+</code></pre><h1 id="5-绘制散点图-加载数据"><a href="#5-绘制散点图-加载数据" class="headerlink" title="5.绘制散点图(加载数据)"></a>5.绘制散点图(加载数据)</h1><ol>
+<li><p>新建散点图 series</p>
+<ul>
+<li><p>在 option 中添加一个 series ， series 的类型为散点图 scatter ，坐标系为地理坐标系 geo</p>
+<pre><code>var option = {
+geo: {
+      ...
+  },
+backgroundColor: &apos;#404a59&apos;,
+series: [
+    {
+        name: &apos;销量&apos;, // series名称
+        type: &apos;scatter&apos;, // series图表类型
+        coordinateSystem: &apos;geo&apos; // series坐标系类型
+    }
+]
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>添加数据</p>
+<ul>
+<li><p>ECharts 中 series.data 是定义图表数据内容的数组，其中每个项数据格式为（标准格式）</p>
+<pre><code>{
+name: &apos;北京&apos;,    // 数据项名称，在这里指地区名称
+
+value: [        // 数据项值
+    116.46,     // 地理坐标，经度
+    39.92,      // 地理坐标，纬度
+    340         // 北京的数值，可添加
+]
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>添加数据（自处理依据需求）</p>
+<ul>
+<li><p>首先我们将需要渲染的数据转换成上述数据格式，存在一个变量中</p>
+<pre><code>var myData = [
+{name: &apos;北京&apos;, value: [121.15, 31.89, value1，value2]},
+{name: &apos;天津&apos;, value: [109.781327, 39.608266, value1，value2]},
+{name: &apos;广州&apos;, value: [120.38, 37.35, value1，value2]},
+{name: &apos;西安&apos;, value: [122.207216, 29.985295, value1，value2]},
+  ...
+]
+</code></pre></li>
+<li><p>然后，将 myData 赋值给 series.data</p>
+<pre><code>var option = {
+geo: {
+      ...
+  },
+  backgroundColor: &apos;#404a59&apos;,
+series: [
+    {
+        name: &apos;销量&apos;,
+        type: &apos;scatter&apos;,
+        coordinateSystem: &apos;geo&apos;,
+
+        data: myData // series数据内容
+    }
+]
+}
+</code></pre></li>
+</ul>
+</li>
+<li><p>添加视觉映射组件</p>
+<p> 视觉映射组件 是标识某一数据范围内数据及颜色对应关系的控件，视觉映射组件分为连续型和分段型，这里我们选用连续型 type:continuous 。同时，通过视觉映射组件可以实现 ECharts 值域漫游功能，即通过拖拽控件手柄选择不同数值范围，达到对图表数据的筛选显示。 在 visualMap 属性中设置值域控件的相关配置</p>
+<pre><code>var option = {
+    ...
+
+    visualMap: {
+        type: &apos;continuous&apos;, // 连续型
+        min: 0,               // 值域最小值，必须参数
+        max: 200,            // 值域最大值，必须参数
+        calculable: true,    // 是否启用值域漫游
+        inRange: {
+                 color: [&apos;#50a3ba&apos;,&apos;#eac736&apos;,&apos;#d94e5d&apos;]
+                             // 指定数值从低到高时的颜色变化
+        },
+        textStyle: {
+            color: &apos;#fff&apos;    // 值域控件的文本颜色
+        }
+        }
+   }
+</code></pre><h1 id="6-结果图"><a href="#6-结果图" class="headerlink" title="6.结果图"></a>6.结果图</h1><p><a href="http://echarts.baidu.com/demo.html#scatter-map" title="echarts官网散点图实例" target="_blank" rel="external">http://echarts.baidu.com/demo.html#scatter-map</a></p>
+</li>
+</ol>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj1eoo2uv0005ds0rhvsoeyjm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/04/12/echarts_chinamap/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/12/echarts_chinamap/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-deadlock" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -279,7 +518,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj1en0la400052c0rztlzwms9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj1eoo2uv0004ds0rwd8wcz2e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -431,7 +670,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1en0law000b2c0rwujtg131" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1eoo2vp000bds0rm98j400j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -578,7 +817,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj1en0lar00092c0rq4hjiyqf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj1eoo2v50008ds0rr1n61ur7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -706,7 +945,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1en0laj00072c0r0dd7unhd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1eoo2vf000ads0rmiz5hj4h" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -831,7 +1070,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1en0la400042c0rgqczsckq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1eoo2ul0002ds0r9tuqltjt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -955,7 +1194,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1en0la400032c0rr4k1l902" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1eoo2uv0003ds0rng6q6qj7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1079,7 +1318,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1en0lau000a2c0rq2tigk7v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1eoo2vf0009ds0r1le5lhog" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1250,7 +1489,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1en0lap00082c0re3rkpybt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1eoo2v50006ds0rt0c0cgt8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1376,7 +1615,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj1en0l9u00012c0rkxd69lak" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2016/11/10/asynchronous/" data-id="cj1eoo2ub0000ds0rr1v21wja" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1454,134 +1693,6 @@ class MyClass(Singleton):
 
 
 
-    <article id="post-To 365" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/11/06/To 365/">To 365</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/06/To 365/">
-            <time datetime="2016-11-06T14:57:12.000Z" itemprop="datePublished">2016-11-06</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>都深夜了，这23岁的生日过的也不是那么的顺畅，我也能感受到这叹息的威力，划破黑衣的霾，直击人心得脉。<br>想成事，必先受其苦，这是亘古不变的，经历了这么多事，风霜阴雨的，哪能忘却了？只是，日复一日的生活，<br>水滴石穿着我们的爱心， 耐心和信心。唯有不忘初心，方能见前后，知因果。<br>我写着写着自己都不知道要说啥，不妨罗列出来，锱铢一二：</p>
-<ol>
-<li>干什么事都得定好目标，有了目标人才会有动力，即时面临艰难险阻，咬牙抬头的那一刻，看到梦想的目标<br>，定然也会蓄力拼搏，殊死搏斗，不向命运低头；</li>
-<li>出了较长远的大目标外（梦想如是。。。），也要定阶段性的小目标，一方面，小的目标可以较为容易的实<br>现，可以激励自己，让自己获得长久“战斗”下去的勇气，另一方面，也告诫自己，困难还很多，千万别“轻敌”；</li>
-<li>情感要有，纪律也不能丢掉。无规矩，不方圆，这种到底无需赘述。是非分明，奖惩分明，要的不是铁面无<br>私，要的是活的明白！浑浑噩噩的，一天天过去了，一件件事经历了，然而并不能为以后树立良好的经验榜样，<br>只有明明白白的活着，才能感受到生命的意义。除此以外，规矩的建立也是为了防止自己逾越雷池，犯下大错，<br>因此，是亟待建立并付诸于心动的；</li>
-<li>互相提高才是正道，共同进步才是正确。且说不到近朱者赤近墨者黑（没有那么严重），就用榜样来讲吧，<br>良好的榜样，才能促进共同的进步，如果不思进取，最终的结果也定然不会太美丽。<br>爱情终究会成为亲情，成为弥漫在你周围的空气一般，平淡，在平淡。长远的认识，或许会帮助自己更加轻松的<br>理解生活的真谛。<br>加油！</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2016/11/06/To 365/" data-id="cj1en0l9u00022c0rea4witct" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2016/11/06/To 365/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/11/06/To 365/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1594,6 +1705,25 @@ class MyClass(Singleton):
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/12/echarts_chinamap/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/12/echarts_chinamap/" class="title">echarts collocation china_map (geo)</a></p>
+                            <p class="item-date"><time datetime="2017-04-12T07:54:38.989Z" itemprop="datePublished">2017-04-12</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1671,25 +1801,6 @@ class MyClass(Singleton):
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/04/06/callback_function/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/04/06/callback_function/" class="title">callback_function</a></p>
-                            <p class="item-date"><time datetime="2017-04-06T02:19:56.403Z" itemprop="datePublished">2017-04-06</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1701,7 +1812,7 @@ class MyClass(Singleton):
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
