@@ -5,8 +5,7 @@
     
     <title>single instance | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="单例模式（四种方法）##方法1  实现new方法
-
+    <meta name="description" content="单例模式（四种方法）方法1  实现new方法
 并在将一个类的实例绑定到类变量_instance上,
 如果cls._instance为None说明该类还没有实例化过,实例化该类,并返回
 如果cls._instance不为None,直接返回cls._instance
@@ -16,18 +15,16 @@ class Singleton(object):
 <meta property="og:title" content="single instance">
 <meta property="og:url" content="http://yoursite.com/2017/04/12/single_instance/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
-<meta property="og:description" content="单例模式（四种方法）##方法1  实现new方法
-
+<meta property="og:description" content="单例模式（四种方法）方法1  实现new方法
 并在将一个类的实例绑定到类变量_instance上,
 如果cls._instance为None说明该类还没有实例化过,实例化该类,并返回
 如果cls._instance不为None,直接返回cls._instance
 class Singleton(object):
     def __new__(cls, *args, **kw):">
-<meta property="og:updated_time" content="2017-04-12T06:41:00.884Z">
+<meta property="og:updated_time" content="2017-04-12T06:49:54.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="single instance">
-<meta name="twitter:description" content="单例模式（四种方法）##方法1  实现new方法
-
+<meta name="twitter:description" content="单例模式（四种方法）方法1  实现new方法
 并在将一个类的实例绑定到类变量_instance上,
 如果cls._instance为None说明该类还没有实例化过,实例化该类,并返回
 如果cls._instance不为None,直接返回cls._instance
@@ -260,8 +257,7 @@ class Singleton(object):
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="单例模式（四种方法）"><a href="#单例模式（四种方法）" class="headerlink" title="单例模式（四种方法）"></a>单例模式（四种方法）</h1><p>##方法1  实现<strong>new</strong>方法</p>
-<ul>
+            <h1 id="单例模式（四种方法）"><a href="#单例模式（四种方法）" class="headerlink" title="单例模式（四种方法）"></a>单例模式（四种方法）</h1><h2 id="方法1-实现new方法"><a href="#方法1-实现new方法" class="headerlink" title="方法1  实现new方法"></a>方法1  实现<strong>new</strong>方法</h2><ul>
 <li>并在将一个类的实例绑定到类变量_instance上,</li>
 <li>如果cls._instance为None说明该类还没有实例化过,实例化该类,并返回</li>
 <li><p>如果cls._instance不为None,直接返回cls._instance</p>
@@ -276,14 +272,13 @@ class MyClass(Singleton):
     a = 1
 </code></pre><p>  one = MyClass()</p>
 <p>  two = MyClass()</p>
-<p>  two.a = 3</p>
-<blockquote>
-<pre><code>print one.a
-</code></pre></blockquote>
+</li>
+<li><p>two.a = 3</p>
 </li>
 </ul>
 <blockquote>
-<p> one和two完全相同,可以用id(), ==, is检测</p>
+<pre><code>print one.a
+</code></pre><p>one和two完全相同,可以用id(), ==, is检测</p>
 <pre><code>print id(one)
 </code></pre><p>29097904</p>
 <pre><code>print id(two)
@@ -293,6 +288,7 @@ class MyClass(Singleton):
 <pre><code>print one is two
 </code></pre><p>True</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="方法2-共享属性-所谓单例就是所有引用-实例、对象-拥有相同的状态-属性-和行为-方法"><a href="#方法2-共享属性-所谓单例就是所有引用-实例、对象-拥有相同的状态-属性-和行为-方法" class="headerlink" title="方法2,共享属性;所谓单例就是所有引用(实例、对象)拥有相同的状态(属性)和行为(方法)"></a>方法2,共享属性;所谓单例就是所有引用(实例、对象)拥有相同的状态(属性)和行为(方法)</h2><ul>
 <li>同一个类的所有实例天然拥有相同的行为(方法),</li>
 <li>只需要保证同一个类的所有实例具有相同的状态(属性)即可</li>
@@ -308,7 +304,8 @@ class MyClass2(Borg):
     a = 1
 </code></pre><p>  one = MyClass2()</p>
 <p>  two = MyClass2()</p>
-<p>  two.a = 3</p>
+</li>
+<li><p>two.a = 3</p>
 </li>
 </ul>
 <blockquote>
@@ -344,9 +341,11 @@ class MyClass3(object):
     __metaclass__ = Singleton2
 </code></pre><p>  one = MyClass3()</p>
 <p>  two = MyClass3()</p>
-<p>  two.a = 3<br>&gt;<br>  print one.a</p>
+</li>
+<li><p>two.a = 3</p>
 </li>
 </ul>
+<p>&gt;<br>    print one.a</p>
 <blockquote>
 <p>3</p>
 <pre><code>print id(one)
@@ -377,9 +376,11 @@ class MyClass4(object):
         self.x = x
 </code></pre><p>  one = MyClass4()</p>
 <p>  two = MyClass4()</p>
-<p>  two.a = 3<br>&gt;<br>  print one.a </p>
+</li>
+<li><p>two.a = 3</p>
 </li>
 </ul>
+<p>&gt;<br>    print one.a </p>
 <blockquote>
 <p>3</p>
 <pre><code>print id(one)
@@ -407,7 +408,7 @@ print one.x
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1elz0zs000axk0rr4sc2kwk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1ema39g000at00r6hgabkye" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -570,7 +571,7 @@ print one.x
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/04/06/hexo_collocation/" class="title"></a></p>
+                            <p class="item-title"><a href="/2017/04/06/hexo_collocation/" class="title">HEXO collocation</a></p>
                             <p class="item-date"><time datetime="2017-04-06T02:30:00.824Z" itemprop="datePublished">2017-04-06</time></p>
                         </div>
                     </li>
