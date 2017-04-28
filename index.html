@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                14
+                15
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -206,6 +206,211 @@
 
             
             <section id="main">
+    <article id="post-PEP_8" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/28/PEP_8/">PEP-8</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/28/PEP_8/">
+            <time datetime="2017-04-28T07:36:16.209Z" itemprop="datePublished">2017-04-28</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="1-代码编排"><a href="#1-代码编排" class="headerlink" title="1. 代码编排"></a>1. 代码编排</h2><ul>
+<li>缩进。4个空格的缩进（编辑器都可以完成此功能），不使用Tap，更不能混合使用Tap和空格。</li>
+<li>每行最大长度79，换行可以使用反斜杠，最好使用圆括号。换行点要在操作符的后边敲回车。</li>
+<li>类和top-level函数定义之间空两行；类中的方法定义之间空一行；函数内逻辑无关段落之间空一行；其他地方尽量不要再空行。</li>
+</ul>
+<hr>
+<h2 id="2-文档编排"><a href="#2-文档编排" class="headerlink" title="2. 文档编排"></a>2. 文档编排</h2><ul>
+<li>模块内容的顺序：模块说明和docstring—import—globals&amp;constants—其他定义。其中import部分，又按标准、三方和自己编写顺序依次排放，之间空一行。</li>
+<li>不要在一句import中多个库，比如import os, sys不推荐。</li>
+<li>如果采用from XX import XX引用库，可以省略‘module.’，都是可能出现命名冲突，这时就要采用import XX。</li>
+</ul>
+<hr>
+<h2 id="3-空格的使用"><a href="#3-空格的使用" class="headerlink" title="3. 空格的使用"></a>3. 空格的使用</h2><pre><code>总体原则，避免不必要的空格。
+1 各种右括号前不要加空格。
+2 逗号、冒号、分号前不要加空格。
+3 函数的左括号前不要加空格。如Func(1)。
+4 序列的左括号前不要加空格。如list[2]。
+5 操作符左右各加一个空格，不要为了对齐增加空格。
+6 函数默认参数使用的赋值符左右省略空格。
+7 不要将多句语句写在同一行，尽管使用‘；’允许。
+8 if/for/while语句中，即使执行语句只有一句，也必须另起一行。
+</code></pre><hr>
+<h2 id="4-注释"><a href="#4-注释" class="headerlink" title="4. 注释"></a>4. 注释</h2><pre><code>总体原则，错误的注释不如没有注释。所以当一段代码发生变化时，第一件事就是要修改注释！
+注释必须使用英文，最好是完整的句子，首字母大写，句后要有结束符，结束符后跟两个空格，开始下一句。如果是短语，可以省略结束符。
+1 块注释，在一段代码前增加的注释。在‘#’后加一空格。段落之间以只有‘#’的行间隔。比如：
+# Description : Module config.
+# 
+# Input : None
+#
+# Output : None
+2 行注释，在一句代码后加注释。比如：x = x + 1 # Increment x
+但是这种方式尽量少使用。
+3 避免无谓的注释。
+</code></pre><hr>
+<h2 id="5-文档描述"><a href="#5-文档描述" class="headerlink" title="5. 文档描述"></a>5. 文档描述</h2><pre><code>1 为所有的共有模块、函数、类、方法写docstrings；非共有的没有必要，但是可以写注释（在def的下一行）。
+2 如果docstring要换行，参考如下例子,详见PEP 257
+&quot;&quot;&quot;Return a foobang
+
+Optional plotz says to frobnicate the bizbaz first.
+
+&quot;&quot;&quot;
+</code></pre><hr>
+<h2 id="6-命名规范"><a href="#6-命名规范" class="headerlink" title="6. 命名规范"></a>6. 命名规范</h2><pre><code>总体原则，新编代码必须按下面命名风格进行，现有库的编码尽量保持风格。
+1 尽量单独使用小写字母‘l’，大写字母‘O’等容易混淆的字母。
+2 模块命名尽量短小，使用全部小写的方式，可以使用下划线。
+3 包命名尽量短小，使用全部小写的方式，不可以使用下划线。
+4 类的命名使用CapWords的方式，模块内部使用的类采用_CapWords的方式。
+5 异常命名使用CapWords+Error后缀的方式。
+6 全局变量尽量只在模块内有效，类似C语言中的static。实现方法有两种，一是__all__机制;二是前缀一个下划线。
+7 函数命名使用全部小写的方式，可以使用下划线。
+8 常量命名使用全部大写的方式，可以使用下划线。
+9 类的属性（方法和变量）命名使用全部小写的方式，可以使用下划线。
+9 类的属性有3种作用域public、non-public和subclass API，可以理解成C++中的public、private、protected，non-public属性前，前缀一条下划线。
+11 类的属性若与关键字名字冲突，后缀一下划线，尽量不要使用缩略等其他方式。
+12 为避免与子类属性命名冲突，在类的一些属性前，前缀两条下划线。比如：类Foo中声明__a,访问时，只能通过Foo._Foo__a，避免歧义。如果子类也叫Foo，那就无能为力了。
+13 类的方法第一个参数必须是self，而静态方法第一个参数必须是cls。
+</code></pre><hr>
+<h2 id="7-编码建议"><a href="#7-编码建议" class="headerlink" title="7. 编码建议"></a>7. 编码建议</h2><p>1 编码中考虑到其他python实现的效率等问题，比如运算符‘+’在CPython（Python）中效率很高，都是Jython中却非常低，所以应该采用.join()的方式。<br>2 尽可能使用‘is’‘is not’取代‘==’，比如if x is not None 要优于if x。<br>3 使用基于类的异常，每个模块或包都有自己的异常类，此异常类继承自Exception。<br>4 异常中不要使用裸露的except，except后跟具体的exceptions。<br>5 异常中try的代码尽可能少。比如：</p>
+<pre><code>try:
+value = collection[key]
+except KeyError:
+return key_not_found(key)
+else:
+return handle_value(value)
+要优于
+try:
+# Too broad!
+return handle_value(collection[key])
+except KeyError:
+# Will also catch KeyError raised by handle_value()
+return key_not_found(key)
+</code></pre><p>6 使用startswith() and endswith()代替切片进行序列前缀或后缀的检查。比如：</p>
+<pre><code>Yes:  if foo.startswith(&apos;bar&apos;):优于
+No:  if foo[:3] == &apos;bar&apos;:
+</code></pre><p>7 使用isinstance()比较对象的类型。比如</p>
+<pre><code>Yes:  if isinstance(obj, int): 优于
+No:  if type(obj) is type(1):
+</code></pre><p>8 判断序列空或不空，有如下规则</p>
+<pre><code>Yes:  if not seq:
+if seq:
+优于
+No:  if len(seq)
+if not len(seq)
+</code></pre><p>9 字符串不要以空格收尾。<br>10 二进制数据判断使用 if boolvalue的方式。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/04/28/PEP_8/" data-id="cj21jdinm00014o0rqozmi7ub" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/04/28/PEP_8/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/28/PEP_8/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-if_else" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -259,7 +464,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/14/if_else/" data-id="cj1huk27m0000500rhvldkyck" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/14/if_else/" data-id="cj21jdioh000d4o0r1e0ynci3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -496,7 +701,7 @@ series: [
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj1hrnqnp00055s0r1265178s" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj21jdinx00054o0raqa9gm09" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -647,7 +852,7 @@ series: [
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj1hrnqna00045s0r3i14s1n5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj21jdinr00034o0rnk3mg386" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -799,7 +1004,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj1hrnqpg000c5s0rhuhgkaew" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj21jdioe000c4o0r9fidzqu8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -946,7 +1151,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj1hrnqpg000b5s0r23tha8p8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj21jdio800094o0r101cq637" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1074,7 +1279,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj1hrnqp000095s0rh2ldh6jc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj21jdio100074o0r4mpg6w3c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1199,7 +1404,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj1hrnqna00035s0r7c47tex7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj21jdioj000e4o0r7wgc2b3o" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1323,7 +1528,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj1hrnqo500085s0rqgia0zuw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj21jdins00044o0r5mrmwn7q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1447,7 +1652,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj1hrnqpg000d5s0ryfytf916" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj21jdioc000b4o0rwpmr5yh1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1525,177 +1730,6 @@ class MyClass(Singleton):
 
 
 
-    <article id="post-git_conclusion" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/05/git_conclusion/">git conclusion</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/05/git_conclusion/">
-            <time datetime="2017-04-05T08:49:59.000Z" itemprop="datePublished">2017-04-05</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>git是三个文件（本地–本地隐藏文件.git–远程仓库）<br>先pull<br>再add<br>然后commit<br>最后push</p>
-<ol>
-<li>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”</li>
-<li>git config –global user.name “Your Name”<br>git config –global user.email “email@example.com”</li>
-<li>cd F: (打开F盘)<br>mkdir <name> (创建子目录)<br>pwd (显示当前目录)</name></li>
-<li>git init (把这个目录变成Git可以管理的仓库)</li>
-<li>git add <file></file></li>
-<li>git commit -m “说明”</li>
-<li>git status (仓库当前的状态)</li>
-<li>git diff (查看不同)</li>
-<li>git log [–pretty=oneline  {缩略版,可选}] (查看历史记录)</li>
-<li>git reset –hard HEAD^ (回退到上一个版本,HEAD后可以是 commit_id)</li>
-<li>git reflog (用来记录你的每一次命令,找到commit_id回到未来某个版本)</li>
-<li>git diff HEAD – <file> (查看工作区和版本库里面最新版本的区别)</file></li>
-<li>git checkout – <file> (用版本库里的版本替换工作区的版本，无论工作区是修改还是删除)</file></li>
-<li>git reset HEAD <file> (把暂存区的修改撤销掉（unstage），重新放回工作区. 用HEAD时，表示最新的版本)</file></li>
-<li>git rm (用于删除一个文件)</li>
-<li>ssh-keygen -t rsa -C “youremail@example.com” (创建SSH Key)</li>
-<li>git remote add origin git@github.com:Bruce333/other.git (关联github远程库)</li>
-<li>git push -u origin master/git push origin master<br>(推送到远程库,第一次用含有 -u 的命令,推送master分支的所有内容,此后用后面的命令推送最新修改)</li>
-<li>git clone git@github.com:Bruce333/other.git (克隆一个本地库)</li>
-<li>git checkout -b dev<br>(创建dev分支，然后切换到dev分支,相当于以下两条命令:git branch dev[创建分支]/git checkout dev[切换分支])</li>
-<li>git branch (列出所有分支，当前分支前面会标一个*号)</li>
-<li>git checkout master (切换到master分支)</li>
-<li>git merge dev (合并指定分支到当前分支)</li>
-<li>git branch -d dev (删除dev分支)</li>
-<li>git log –graph (查看分支合并图)</li>
-<li>git merge –no-ff -m “merge with no-ff” dev<br>(通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息;–no-ff表示禁用Fast forward,用普通模式合并，合并后的历史有分支，能看出来曾经做过合并;-m参数，把commit描述写进去)</li>
-<li>git stash (把当前工作现场“储藏”起来，等以后恢复现场后继续工作)</li>
-<li>git stash list (查看工作现场) / git stash apply stash@{0} ()</li>
-<li>git stash pop (恢复的同时把stash内容也删了,相当于:git stash apply[恢复]/git stash drop[删除])</li>
-<li>git branch -D <name> (强行删除一个没有被合并过的分支)</name></li>
-<li>git remote (查看远程库的信息) / git remote -v (显示更详细的信息)</li>
-<li>git checkout -b branch-name origin/branch-name (在本地创建和远程分支对应的分支,本地和远程分支的名称最好一致)</li>
-<li>从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交</li>
-<li>git pull<br>(把最新的提交抓下来;如果提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，<br>用命令git branch –set-upstream branch-name origin/branch-name)</li>
-<li>git tag <name> <commit id="" 可无=""><br>(打一个新标签,默认标签是打在最新提交的commit上的;找到历史提交的commit id,可以给历史版本打标签)</commit></name></li>
-<li>git show <tagname> (查看标签信息)</tagname></li>
-<li>git tag (查看所有标签)</li>
-<li>git tag -a <tagname> -m “blablabla…” (指定标签信息)</tagname></li>
-<li>git tag -s <tagname> -m “blablabla…” (用PGP签名标签)</tagname></li>
-<li>git tag -d <name> (删除标签)</name></li>
-<li>git push origin <tagname> (推送某个标签到远程)</tagname></li>
-<li>git push origin –tags (一次性推送全部尚未推送到远程的本地标签)</li>
-<li>git tag -d <tagname> (删除一个本地标签)</tagname></li>
-<li>git push origin :refs/tags/<tagname> (删除一个远程标签)</tagname></li>
-<li>git config –global color.ui true (让Git适当地显示不同的颜色)</li>
-<li>忽略某些文件时，需要编写.gitignore；.gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理</li>
-<li>git config –global alias.st status<br>(告诉Git，以后st就表示status,配置别名;加上–global是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用;每个仓库的Git配置文件都放在.git/config文件中,别名就在[alias]后面，要删除别名，直接把对应的行删掉即可;而当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中)</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2017/04/05/git_conclusion/" data-id="cj1hrnqnp00065s0r5a4bz8sd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2017/04/05/git_conclusion/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/05/git_conclusion/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1708,6 +1742,25 @@ class MyClass(Singleton):
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/28/PEP_8/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/28/PEP_8/" class="title">PEP-8</a></p>
+                            <p class="item-date"><time datetime="2017-04-28T07:36:16.209Z" itemprop="datePublished">2017-04-28</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1785,25 +1838,6 @@ class MyClass(Singleton):
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/04/10/mime_type/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/04/10/mime_type/" class="title">mime.type</a></p>
-                            <p class="item-date"><time datetime="2017-04-10T06:04:14.888Z" itemprop="datePublished">2017-04-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1815,7 +1849,7 @@ class MyClass(Singleton):
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
