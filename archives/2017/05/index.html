@@ -3,42 +3,14 @@
 <head>
     <meta charset="utf-8">
     
-    <title>echarts collocation china_map (geo) | Science &amp; Technology For Future</title>
+    <title>归档: 2017/5 | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1.图表基本配置// 初始化echarts示例mapChart
-var mapChart = echarts.init(document.getElementById(&amp;apos;mapcontainer&amp;apos;));
-
-// mapChart的配置
-var option = {
-
-};
-2.新建一个地理坐标系 geo ，地图类型为中国地图var option = {
-geo: {">
-<meta property="og:type" content="article">
-<meta property="og:title" content="echarts collocation china_map (geo)">
-<meta property="og:url" content="http://yoursite.com/2017/04/12/echarts_chinamap/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Science & Technology For Future">
+<meta property="og:url" content="http://yoursite.com/archives/2017/05/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
-<meta property="og:description" content="1.图表基本配置// 初始化echarts示例mapChart
-var mapChart = echarts.init(document.getElementById(&amp;apos;mapcontainer&amp;apos;));
-
-// mapChart的配置
-var option = {
-
-};
-2.新建一个地理坐标系 geo ，地图类型为中国地图var option = {
-geo: {">
-<meta property="og:updated_time" content="2017-04-12T08:02:32.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="echarts collocation china_map (geo)">
-<meta name="twitter:description" content="1.图表基本配置// 初始化echarts示例mapChart
-var mapChart = echarts.init(document.getElementById(&amp;apos;mapcontainer&amp;apos;));
-
-// mapChart的配置
-var option = {
-
-};
-2.新建一个地理坐标系 geo ，地图类型为中国地图var option = {
-geo: {">
+<meta name="twitter:title" content="Science & Technology For Future">
     
 
     
@@ -233,275 +205,40 @@ geo: {">
 </aside>
 
             
-            <section id="main"><article id="post-echarts_chinamap" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+            <section id="main"><div class="timeline timeline-wrap">
+    
+            <div class="timeline-row timeline-row-major">
+                <span class="node"><i class="fa fa-calendar"></i></span>
+                <h1 class="title">2017</h1>
+            </div>
         
-        
-            <header class="article-header">
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            echarts collocation china_map (geo)
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2017/05/01/python_concurrency/">python concurrency</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/04/12/echarts_chinamap/">
-            <time datetime="2017-04-12T07:54:38.989Z" itemprop="datePublished">2017-04-12</time>
+        <a href="/2017/05/01/python_concurrency/">
+            <time datetime="2017-05-01T07:39:15.064Z" itemprop="datePublished">2017-05-01</time>
         </a>
     </div>
 
 
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h2 id="1-图表基本配置"><a href="#1-图表基本配置" class="headerlink" title="1.图表基本配置"></a>1.图表基本配置</h2><pre><code>// 初始化echarts示例mapChart
-var mapChart = echarts.init(document.getElementById(&apos;mapcontainer&apos;));
-
-// mapChart的配置
-var option = {
-
-};
-</code></pre><h2 id="2-新建一个地理坐标系-geo-，地图类型为中国地图"><a href="#2-新建一个地理坐标系-geo-，地图类型为中国地图" class="headerlink" title="2.新建一个地理坐标系 geo ，地图类型为中国地图"></a>2.新建一个地理坐标系 geo ，地图类型为中国地图</h2><pre><code>var option = {
-geo: {
-      map: &apos;china&apos;
-  }
-</code></pre><p><em>geo.map 属性定义该地理坐标系中的地图数据，这里我们要用 china.js ，设置map值为 ‘china’ 。这里需要注意，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’ ，但如果要引用省市自治区地图ap 值为简体中文，例如 beijing.js ，map 值为 ’北京’ 。</em></p>
-<h2 id="3-调用-setOption-option-为图表设置配置项"><a href="#3-调用-setOption-option-为图表设置配置项" class="headerlink" title="3.调用 setOption(option) 为图表设置配置项"></a>3.调用 setOption(option) 为图表设置配置项</h2><pre><code>mapChart.setOption(option);
-</code></pre><h2 id="4-基本的地图设置"><a href="#4-基本的地图设置" class="headerlink" title="4.基本的地图设置"></a>4.基本的地图设置</h2><pre><code>var option = {
-geo: {
-    map: &apos;china&apos;,
-
-    itemStyle: {                    // 定义样式
-        normal: {                    // 普通状态下的样式
-            areaColor: &apos;#323c48&apos;,
-            borderColor: &apos;#111&apos;
-        },
-        emphasis: {                    // 高亮状态下的样式
-            areaColor: &apos;#2a333d&apos;
-        }
-    }
-},
-backgroundColor: &apos;#404a59&apos;,          // 图表背景色
-}
-</code></pre><h2 id="5-绘制散点图-加载数据"><a href="#5-绘制散点图-加载数据" class="headerlink" title="5.绘制散点图(加载数据)"></a>5.绘制散点图(加载数据)</h2><ol>
-<li><p>新建散点图 series</p>
-<ul>
-<li><p>在 option 中添加一个 series ， series 的类型为散点图 scatter ，坐标系为地理坐标系 geo</p>
-<pre><code>var option = {
-geo: {
-      ...
-  },
-backgroundColor: &apos;#404a59&apos;,
-series: [
-    {
-        name: &apos;销量&apos;, // series名称
-        type: &apos;scatter&apos;, // series图表类型
-        coordinateSystem: &apos;geo&apos; // series坐标系类型
-    }
-]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>添加数据</p>
-<ul>
-<li><p>ECharts 中 series.data 是定义图表数据内容的数组，其中每个项数据格式为（标准格式）</p>
-<pre><code>{
-name: &apos;北京&apos;,    // 数据项名称，在这里指地区名称
-
-value: [        // 数据项值
-    116.46,     // 地理坐标，经度
-    39.92,      // 地理坐标，纬度
-    340         // 北京的数值，可添加
-]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>添加数据（自处理依据需求）</p>
-<ul>
-<li><p>首先我们将需要渲染的数据转换成上述数据格式，存在一个变量中</p>
-<pre><code>var myData = [
-{name: &apos;北京&apos;, value: [121.15, 31.89, value1，value2]},
-{name: &apos;天津&apos;, value: [109.781327, 39.608266, value1，value2]},
-{name: &apos;广州&apos;, value: [120.38, 37.35, value1，value2]},
-{name: &apos;西安&apos;, value: [122.207216, 29.985295, value1，value2]},
-  ...
-]
-</code></pre></li>
-<li><p>然后，将 myData 赋值给 series.data</p>
-<pre><code>var option = {
-geo: {
-      ...
-  },
-  backgroundColor: &apos;#404a59&apos;,
-series: [
-    {
-        name: &apos;销量&apos;,
-        type: &apos;scatter&apos;,
-        coordinateSystem: &apos;geo&apos;,
-
-        data: myData // series数据内容
-    }
-]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>添加视觉映射组件</p>
-<p> 视觉映射组件 是标识某一数据范围内数据及颜色对应关系的控件，视觉映射组件分为连续型和分段型，这里我们选用连续型 type:continuous 。同时，通过视觉映射组件可以实现 ECharts 值域漫游功能，即通过拖拽控件手柄选择不同数值范围，达到对图表数据的筛选显示。 在 visualMap 属性中设置值域控件的相关配置</p>
-<pre><code>var option = {
-    ...
-
-    visualMap: {
-        type: &apos;continuous&apos;, // 连续型
-        min: 0,               // 值域最小值，必须参数
-        max: 200,            // 值域最大值，必须参数
-        calculable: true,    // 是否启用值域漫游
-        inRange: {
-                 color: [&apos;#50a3ba&apos;,&apos;#eac736&apos;,&apos;#d94e5d&apos;]
-                             // 指定数值从低到高时的颜色变化
-        },
-        textStyle: {
-            color: &apos;#fff&apos;    // 值域控件的文本颜色
-        }
-        }
-   }
-</code></pre><h2 id="6-结果图"><a href="#6-结果图" class="headerlink" title="6.结果图"></a>6.结果图</h2><p><a href="http://echarts.baidu.com/demo.html#scatter-map" title="echarts官网散点图实例" target="_blank" rel="external">http://echarts.baidu.com/demo.html#scatter-map</a></p>
-</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj25tg5160003jo0ryd67f3y7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2017/04/12/echarts_chinamap/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/12/echarts_chinamap/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2017/04/14/if_else/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    if-else/if
-                
+                    
+                    
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2017/04/12/deadlock/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Deadlock</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    <section id="comments">
-    
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-    
-    </section>
-
+</div>
 </section>
             
                 <aside id="sidebar">
@@ -660,13 +397,11 @@ series: [
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2017/04/12/echarts_chinamap/';
-        
-        this.page.identifier = 'echarts_chinamap';
+        this.page.identifier = 'undefined';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/embed.js';
+        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/count.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();

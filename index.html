@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                15
+                16
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -206,6 +206,143 @@
 
             
             <section id="main">
+    <article id="post-python_concurrency" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/05/01/python_concurrency/">python concurrency</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/05/01/python_concurrency/">
+            <time datetime="2017-05-01T07:39:15.064Z" itemprop="datePublished">2017-05-01</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h2 id="1-python-Stackless"><a href="#1-python-Stackless" class="headerlink" title="1. python Stackless"></a>1. python Stackless</h2><p>Stackless Python几乎有匪夷所思的并发性能，比其他方案快上几十倍，而且借助Stackless Python提供的channel机制，实现也相当简单。</p>
+<h2 id="2-Python-thread-线程"><a href="#2-Python-thread-线程" class="headerlink" title="2. Python thread 线程"></a>2. Python thread 线程</h2><ul>
+<li>thread模块和threading提供基本相同的性能；</li>
+<li>threading模块只是对thread的一种封装；</li>
+<li>threading简单，但由于自身本身实例维护方面的开销，相对慢一点；</li>
+<li>从代码实现体验来说，用threading配合Queue比直接用thread方便，并且出错的机会也要少很多；</li>
+</ul>
+<blockquote>
+<pre><code>import threading
+def foo(a,b):
+return a,b
+send_thread=threading.thread(target=foo,args=(arg1,arg2))
+send_thread.start()
+</code></pre></blockquote>
+<h2 id="3-Python-processing-进程"><a href="#3-Python-processing-进程" class="headerlink" title="3. Python processing 进程"></a>3. Python processing 进程</h2><p>processing模块给出的进程方案大致比thread线程要慢一倍，并且这是在我特意调整虚拟机给它预备了足够空闲内存、避免使用交换分区的情况下取得的（特意分给虚拟机700多M内存就是为了这个）。而其他方案仅仅占用数M内存，完全无需特意调大可用内存总量。当然，如果给虚拟机多启用几个核心的话，processing也许会占上点便宜，毕竟目前thread模块是不能有效利用多cpu资源的（经实验，Stackless Python在开启双核的情况下表现的性能和单核是一样的，说明也是不能有效利用多cpu）。因此一种比较合理的做法是根据cpu的数量，启用少量几个进程，而在进程内部再开启线程进行实际业务处理，这也是目前Python社区推荐的有效利用多cpu资源的办法。好在processing配合其自身提供的Queue模块，编程体验还是比较轻松的。<br></p>
+            <p class="article-more-link">
+                <a href="/2017/05/01/python_concurrency/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/05/01/python_concurrency/" data-id="cj25tg51t000ajo0rhmeqdzep" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/05/01/python_concurrency/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/05/01/python_concurrency/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-PEP_8" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -333,7 +470,7 @@ if not len(seq)
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/28/PEP_8/" data-id="cj21jdinm00014o0rqozmi7ub" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/28/PEP_8/" data-id="cj25tg51b0005jo0rc9w2ats8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -464,7 +601,7 @@ if not len(seq)
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/14/if_else/" data-id="cj21jdioh000d4o0r1e0ynci3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/14/if_else/" data-id="cj25tg533000ejo0r2icd47ac" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -701,7 +838,7 @@ series: [
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj21jdinx00054o0raqa9gm09" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj25tg5160003jo0ryd67f3y7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -852,7 +989,7 @@ series: [
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj21jdinr00034o0rnk3mg386" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/deadlock/" data-id="cj25tg5130002jo0rsylj8qzc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1004,7 +1141,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj21jdioe000c4o0r9fidzqu8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/12/single_instance/" data-id="cj25tg521000djo0rba06hwkr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1151,7 +1288,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj21jdio800094o0r101cq637" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/10/mime_type/" data-id="cj25tg51r0009jo0r3il2g5ic" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1279,7 +1416,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj21jdio100074o0r4mpg6w3c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/hexo_collocation/" data-id="cj25tg51p0008jo0raamvxyef" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1404,7 +1541,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj21jdioj000e4o0r7wgc2b3o" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/06/callback_function/" data-id="cj25tg5170004jo0r9c9kmko2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1528,7 +1665,7 @@ class MyClass(Singleton):
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj21jdins00044o0r5mrmwn7q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/04/05/crontab_time/" data-id="cj25tg535000fjo0rkha8ayvi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1606,130 +1743,6 @@ class MyClass(Singleton):
 
 
 
-    <article id="post-mysql_deploy" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/05/mysql_deploy/">mysql deploy</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/05/mysql_deploy/">
-            <time datetime="2017-04-05T12:25:15.353Z" itemprop="datePublished">2017-04-05</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h2 id="MySQL数据库如何实现远程登录"><a href="#MySQL数据库如何实现远程登录" class="headerlink" title="MySQL数据库如何实现远程登录"></a>MySQL数据库如何实现远程登录</h2><h2 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1.修改配置文件"></a>1.修改配置文件</h2><p>/etc/mysql<br>找到my.cnf，不清楚mysql配置文件编码的话，建议使用<br>vi  /etc/mysql/my.cnf<br>i到bind-address 127.0.0.1<br>注释掉这句话：# bind-address 127.0.0.1<br>：wq保存并退出，如果出现问题，则使用<br>：w !sudo tee %</p>
-<h2 id="2-修改mysql-host"><a href="#2-修改mysql-host" class="headerlink" title="2.修改mysql host"></a>2.修改mysql host</h2><p>mysql&gt; use mysql<br>mysql&gt; update user set Host=’%’ where User=’root’<br>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘myuser’@’%’ IDENTIFIED BY ‘mypwd’ WITH GRANT OPTION<br>mysql&gt; FLUSH PRIVILEGES</p>
-<h2 id="3-重启mysql"><a href="#3-重启mysql" class="headerlink" title="3.重启mysql"></a>3.重启mysql</h2><p>/etc/init.d/mysql  stop<br>/etc/init.d/mysql  start</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2017/04/05/mysql_deploy/" data-id="cj21jdioc000b4o0rwpmr5yh1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2017/04/05/mysql_deploy/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/05/mysql_deploy/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1742,6 +1755,25 @@ class MyClass(Singleton):
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/05/01/python_concurrency/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/05/01/python_concurrency/" class="title">python concurrency</a></p>
+                            <p class="item-date"><time datetime="2017-05-01T07:39:15.064Z" itemprop="datePublished">2017-05-01</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1819,25 +1851,6 @@ class MyClass(Singleton):
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/04/12/single_instance/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/04/12/single_instance/" class="title">single instance</a></p>
-                            <p class="item-date"><time datetime="2017-04-12T06:41:13.665Z" itemprop="datePublished">2017-04-12</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1849,7 +1862,7 @@ class MyClass(Singleton):
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 

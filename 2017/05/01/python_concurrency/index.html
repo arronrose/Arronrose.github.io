@@ -3,42 +3,30 @@
 <head>
     <meta charset="utf-8">
     
-    <title>echarts collocation china_map (geo) | Science &amp; Technology For Future</title>
+    <title>python concurrency | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1.图表基本配置// 初始化echarts示例mapChart
-var mapChart = echarts.init(document.getElementById(&amp;apos;mapcontainer&amp;apos;));
-
-// mapChart的配置
-var option = {
-
-};
-2.新建一个地理坐标系 geo ，地图类型为中国地图var option = {
-geo: {">
+    <meta name="description" content="1. python StacklessStackless Python几乎有匪夷所思的并发性能，比其他方案快上几十倍，而且借助Stackless Python提供的channel机制，实现也相当简单。
+2. Python thread 线程
+thread模块和threading提供基本相同的性能；
+threading模块只是对thread的一种封装；
+threading简单，但由于自身本身实例维护">
 <meta property="og:type" content="article">
-<meta property="og:title" content="echarts collocation china_map (geo)">
-<meta property="og:url" content="http://yoursite.com/2017/04/12/echarts_chinamap/index.html">
+<meta property="og:title" content="python concurrency">
+<meta property="og:url" content="http://yoursite.com/2017/05/01/python_concurrency/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
-<meta property="og:description" content="1.图表基本配置// 初始化echarts示例mapChart
-var mapChart = echarts.init(document.getElementById(&amp;apos;mapcontainer&amp;apos;));
-
-// mapChart的配置
-var option = {
-
-};
-2.新建一个地理坐标系 geo ，地图类型为中国地图var option = {
-geo: {">
-<meta property="og:updated_time" content="2017-04-12T08:02:32.250Z">
+<meta property="og:description" content="1. python StacklessStackless Python几乎有匪夷所思的并发性能，比其他方案快上几十倍，而且借助Stackless Python提供的channel机制，实现也相当简单。
+2. Python thread 线程
+thread模块和threading提供基本相同的性能；
+threading模块只是对thread的一种封装；
+threading简单，但由于自身本身实例维护">
+<meta property="og:updated_time" content="2017-04-29T07:04:58.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="echarts collocation china_map (geo)">
-<meta name="twitter:description" content="1.图表基本配置// 初始化echarts示例mapChart
-var mapChart = echarts.init(document.getElementById(&amp;apos;mapcontainer&amp;apos;));
-
-// mapChart的配置
-var option = {
-
-};
-2.新建一个地理坐标系 geo ，地图类型为中国地图var option = {
-geo: {">
+<meta name="twitter:title" content="python concurrency">
+<meta name="twitter:description" content="1. python StacklessStackless Python几乎有匪夷所思的并发性能，比其他方案快上几十倍，而且借助Stackless Python提供的channel机制，实现也相当简单。
+2. Python thread 线程
+thread模块和threading提供基本相同的性能；
+threading模块只是对thread的一种封装；
+threading简单，但由于自身本身实例维护">
     
 
     
@@ -233,7 +221,7 @@ geo: {">
 </aside>
 
             
-            <section id="main"><article id="post-echarts_chinamap" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-python_concurrency" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -241,7 +229,7 @@ geo: {">
                 
     
         <h1 class="article-title" itemprop="name">
-            echarts collocation china_map (geo)
+            python concurrency
         </h1>
     
 
@@ -250,8 +238,8 @@ geo: {">
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/04/12/echarts_chinamap/">
-            <time datetime="2017-04-12T07:54:38.989Z" itemprop="datePublished">2017-04-12</time>
+        <a href="/2017/05/01/python_concurrency/">
+            <time datetime="2017-05-01T07:39:15.064Z" itemprop="datePublished">2017-05-01</time>
         </a>
     </div>
 
@@ -266,122 +254,27 @@ geo: {">
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="1-图表基本配置"><a href="#1-图表基本配置" class="headerlink" title="1.图表基本配置"></a>1.图表基本配置</h2><pre><code>// 初始化echarts示例mapChart
-var mapChart = echarts.init(document.getElementById(&apos;mapcontainer&apos;));
-
-// mapChart的配置
-var option = {
-
-};
-</code></pre><h2 id="2-新建一个地理坐标系-geo-，地图类型为中国地图"><a href="#2-新建一个地理坐标系-geo-，地图类型为中国地图" class="headerlink" title="2.新建一个地理坐标系 geo ，地图类型为中国地图"></a>2.新建一个地理坐标系 geo ，地图类型为中国地图</h2><pre><code>var option = {
-geo: {
-      map: &apos;china&apos;
-  }
-</code></pre><p><em>geo.map 属性定义该地理坐标系中的地图数据，这里我们要用 china.js ，设置map值为 ‘china’ 。这里需要注意，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’ ，但如果要引用省市自治区地图ap 值为简体中文，例如 beijing.js ，map 值为 ’北京’ 。</em></p>
-<h2 id="3-调用-setOption-option-为图表设置配置项"><a href="#3-调用-setOption-option-为图表设置配置项" class="headerlink" title="3.调用 setOption(option) 为图表设置配置项"></a>3.调用 setOption(option) 为图表设置配置项</h2><pre><code>mapChart.setOption(option);
-</code></pre><h2 id="4-基本的地图设置"><a href="#4-基本的地图设置" class="headerlink" title="4.基本的地图设置"></a>4.基本的地图设置</h2><pre><code>var option = {
-geo: {
-    map: &apos;china&apos;,
-
-    itemStyle: {                    // 定义样式
-        normal: {                    // 普通状态下的样式
-            areaColor: &apos;#323c48&apos;,
-            borderColor: &apos;#111&apos;
-        },
-        emphasis: {                    // 高亮状态下的样式
-            areaColor: &apos;#2a333d&apos;
-        }
-    }
-},
-backgroundColor: &apos;#404a59&apos;,          // 图表背景色
-}
-</code></pre><h2 id="5-绘制散点图-加载数据"><a href="#5-绘制散点图-加载数据" class="headerlink" title="5.绘制散点图(加载数据)"></a>5.绘制散点图(加载数据)</h2><ol>
-<li><p>新建散点图 series</p>
-<ul>
-<li><p>在 option 中添加一个 series ， series 的类型为散点图 scatter ，坐标系为地理坐标系 geo</p>
-<pre><code>var option = {
-geo: {
-      ...
-  },
-backgroundColor: &apos;#404a59&apos;,
-series: [
-    {
-        name: &apos;销量&apos;, // series名称
-        type: &apos;scatter&apos;, // series图表类型
-        coordinateSystem: &apos;geo&apos; // series坐标系类型
-    }
-]
-}
-</code></pre></li>
+            <h2 id="1-python-Stackless"><a href="#1-python-Stackless" class="headerlink" title="1. python Stackless"></a>1. python Stackless</h2><p>Stackless Python几乎有匪夷所思的并发性能，比其他方案快上几十倍，而且借助Stackless Python提供的channel机制，实现也相当简单。</p>
+<h2 id="2-Python-thread-线程"><a href="#2-Python-thread-线程" class="headerlink" title="2. Python thread 线程"></a>2. Python thread 线程</h2><ul>
+<li>thread模块和threading提供基本相同的性能；</li>
+<li>threading模块只是对thread的一种封装；</li>
+<li>threading简单，但由于自身本身实例维护方面的开销，相对慢一点；</li>
+<li>从代码实现体验来说，用threading配合Queue比直接用thread方便，并且出错的机会也要少很多；</li>
 </ul>
-</li>
-<li><p>添加数据</p>
-<ul>
-<li><p>ECharts 中 series.data 是定义图表数据内容的数组，其中每个项数据格式为（标准格式）</p>
-<pre><code>{
-name: &apos;北京&apos;,    // 数据项名称，在这里指地区名称
-
-value: [        // 数据项值
-    116.46,     // 地理坐标，经度
-    39.92,      // 地理坐标，纬度
-    340         // 北京的数值，可添加
-]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>添加数据（自处理依据需求）</p>
-<ul>
-<li><p>首先我们将需要渲染的数据转换成上述数据格式，存在一个变量中</p>
-<pre><code>var myData = [
-{name: &apos;北京&apos;, value: [121.15, 31.89, value1，value2]},
-{name: &apos;天津&apos;, value: [109.781327, 39.608266, value1，value2]},
-{name: &apos;广州&apos;, value: [120.38, 37.35, value1，value2]},
-{name: &apos;西安&apos;, value: [122.207216, 29.985295, value1，value2]},
-  ...
-]
-</code></pre></li>
-<li><p>然后，将 myData 赋值给 series.data</p>
-<pre><code>var option = {
-geo: {
-      ...
-  },
-  backgroundColor: &apos;#404a59&apos;,
-series: [
-    {
-        name: &apos;销量&apos;,
-        type: &apos;scatter&apos;,
-        coordinateSystem: &apos;geo&apos;,
-
-        data: myData // series数据内容
-    }
-]
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>添加视觉映射组件</p>
-<p> 视觉映射组件 是标识某一数据范围内数据及颜色对应关系的控件，视觉映射组件分为连续型和分段型，这里我们选用连续型 type:continuous 。同时，通过视觉映射组件可以实现 ECharts 值域漫游功能，即通过拖拽控件手柄选择不同数值范围，达到对图表数据的筛选显示。 在 visualMap 属性中设置值域控件的相关配置</p>
-<pre><code>var option = {
-    ...
-
-    visualMap: {
-        type: &apos;continuous&apos;, // 连续型
-        min: 0,               // 值域最小值，必须参数
-        max: 200,            // 值域最大值，必须参数
-        calculable: true,    // 是否启用值域漫游
-        inRange: {
-                 color: [&apos;#50a3ba&apos;,&apos;#eac736&apos;,&apos;#d94e5d&apos;]
-                             // 指定数值从低到高时的颜色变化
-        },
-        textStyle: {
-            color: &apos;#fff&apos;    // 值域控件的文本颜色
-        }
-        }
-   }
-</code></pre><h2 id="6-结果图"><a href="#6-结果图" class="headerlink" title="6.结果图"></a>6.结果图</h2><p><a href="http://echarts.baidu.com/demo.html#scatter-map" title="echarts官网散点图实例" target="_blank" rel="external">http://echarts.baidu.com/demo.html#scatter-map</a></p>
-</li>
-</ol>
+<blockquote>
+<pre><code>import threading
+def foo(a,b):
+return a,b
+send_thread=threading.thread(target=foo,args=(arg1,arg2))
+send_thread.start()
+</code></pre></blockquote>
+<h2 id="3-Python-processing-进程"><a href="#3-Python-processing-进程" class="headerlink" title="3. Python processing 进程"></a>3. Python processing 进程</h2><p>processing模块给出的进程方案大致比thread线程要慢一倍，并且这是在我特意调整虚拟机给它预备了足够空闲内存、避免使用交换分区的情况下取得的（特意分给虚拟机700多M内存就是为了这个）。而其他方案仅仅占用数M内存，完全无需特意调大可用内存总量。当然，如果给虚拟机多启用几个核心的话，processing也许会占上点便宜，毕竟目前thread模块是不能有效利用多cpu资源的（经实验，Stackless Python在开启双核的情况下表现的性能和单核是一样的，说明也是不能有效利用多cpu）。因此一种比较合理的做法是根据cpu的数量，启用少量几个进程，而在进程内部再开启线程进行实际业务处理，这也是目前Python社区推荐的有效利用多cpu资源的办法。好在processing配合其自身提供的Queue模块，编程体验还是比较轻松的。<br><a id="more"></a></p>
+<h2 id="4-python-greenlet-超轻量级方案"><a href="#4-python-greenlet-超轻量级方案" class="headerlink" title="4. python greenlet 超轻量级方案"></a>4. python greenlet 超轻量级方案</h2><p>基于greenlet的实现则性能仅次于Stackless Python，大致比Stackless Python慢一倍，比其他方案快接近一个数量级。其实greenlet不是一种真正的并发机制，而是在同一线程内，在不同函数的执行代码块之间切换，实施“你运行一会、我运行一会”，并且在进行切换时必须指定何时切换以及切换到哪。greenlet的接口是比较简单易用的，但是使用greenlet时的思考方式与其他并发方案存在一定区别。线程/进程模型在大逻辑上通常从并发角度开始考虑，把能够并行处理的并且值得并行处理的任务分离出来，在不同的线程/进程下运行，然后考虑分离过程可能造成哪些互斥、冲突问题，将互斥的资源加锁保护来保证并发处理的正确性。greenlet则是要求从避免阻塞的角度来进行开发，当出现阻塞时，就显式切换到另一段没有被阻塞的代码段执行，直到原先的阻塞状况消失以后，再人工切换回原来的代码段继续处理。因此，greenlet本质是一种合理安排了的串行，实验中greenlet方案能够得到比较好的性能表现，主要也是因为通过合理的代码执行流程切换，完全避免了死锁和阻塞等情况（执行带屏幕输出的ring_greenlet.py我们会看到脚本总是一个一个地处理消息，把一个消息在环上从头传到尾之后，再开始处理下一个消息）。因为greenlet本质是串行，因此在没有进行显式切换时，代码的其他部分是无法被执行到的，如果要避免代码长时间占用运算资源造成程序假死，那么还是要将greenlet与线程/进程机制结合使用（每个线程、进程下都可以建立多个greenlet，但是跨线程/进程时greenlet之间无法切换或通讯）。</p>
+<p>Stackless则比较特别，对很多资源从底层进行了并发改造，并且提供了channel等更适合“并发”的通讯机制实现，使得资源互斥冲突的可能性大大减小，并发性能自然得以提高。粗糙来讲，greenlet是“阻塞了我就先干点儿别的，但是程序员得明确告诉greenlet能先干点儿啥以及什么时候回来”；Stackless则是“东西我已经改造好了，你只要用我的东西，并发冲突就不用操心，只管放心大胆地并发好了”。greenlet应该是学习了Stackless的上下文切换机制，但是对底层资源没有进行适合并发的改造。并且实际上greenlet也没有必要改造底层资源的并发性，因为它本质是串行的单线程，不与其他并发模型混合使用的话是无法造成对资源的并发访问的。</p>
+<h2 id="5-python-greenlet-封装后eventlet方案"><a href="#5-python-greenlet-封装后eventlet方案" class="headerlink" title="5. python greenlet 封装后eventlet方案"></a>5. python greenlet 封装后eventlet方案</h2><p>greenlet 封装后的 eventlet 方案，eventlet 是基于 greenlet 实现的面向网络应用的并发处理框架，提供“线程”池、队列等与其他 Python 线程、进程模型非常相似的 api，并且提供了对 Python 发行版自带库及其他模块的超轻量并发适应性调整方法，比直接使用 greenlet 要方便得多。并且这个解决方案源自著名虚拟现实游戏“第二人生”，可以说是久经考验的新兴并发处理模型。其基本原理是调整 Python 的 socket 调用，当发生阻塞时则切换到其他 greenlet 执行，这样来保证资源的有效利用。需要注意的是：</p>
+<p><em>eventlet 提供的函数只能对 Python 代码中的 socket 调用进行处理，而不能对模块的 C 语言部分的 socket 调用进行修改。对后者这类模块，仍然需要把调用模块的代码封装在 Python 标准线程调用中，之后利用 eventlet 提供的适配器实现 eventlet 与标准线程之间的协作。</em></p>
+<p><em>再有，虽然 eventlet 把 api 封装成了非常类似标准线程库的形式，但两者的实际并发执行流程仍然有明显区别。在没有出现 I/O 阻塞时，除非显式声明，否则当前正在执行的 eventlet 永远不会把 cpu 交给其他的 eventlet，而标准线程则是无论是否出现阻塞，总是由所有线程一起争夺运行资源。所有 eventlet 对 I/O 阻塞无关的大运算量耗时操作基本没有什么帮助。</em></p>
+<p>在性能测试结果方面，eventlet 消耗的运行时间大致是 greenlet 方案的 3 到 5 倍，而 Python 标准线程模型的 thread 方式消耗的运行时间大致是 eventlet 测试代码的 8 到 10 倍。其中前者可能是因为我们在 eventlet 的测试代码中，使用队列机制来完成所有的消息传递，而队列上的访问互斥保护可能额外消耗了一些运算资源。总体而言，eventlet 模型的并发性能虽然比 Stackless Python 和直接使用 greenlet 有一定差距，但仍然比标准线程模型有大约一个数量级的优势，这也就不奇怪近期很多强调并发性能的网络服务器实现采取 eventlet 、线程、进程三者组合使用的实现方案。</p>
 
         
         </div>
@@ -392,7 +285,7 @@ series: [
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/04/12/echarts_chinamap/" data-id="cj25tg5160003jo0ryd67f3y7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/05/01/python_concurrency/" data-id="cj25tg51t000ajo0rhmeqdzep" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -460,7 +353,7 @@ series: [
 
             
     
-        <a href="http://yoursite.com/2017/04/12/echarts_chinamap/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/04/12/echarts_chinamap/">评论</a>
+        <a href="http://yoursite.com/2017/05/01/python_concurrency/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/05/01/python_concurrency/">评论</a>
     
 
         </footer>
@@ -469,19 +362,10 @@ series: [
         
 <nav id="article-nav">
     
-        <a href="/2017/04/14/if_else/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    if-else/if
-                
-            </div>
-        </a>
     
-    
-        <a href="/2017/04/12/deadlock/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/04/28/PEP_8/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Deadlock</div>
+            <div class="article-nav-title">PEP-8</div>
         </a>
     
 </nav>
@@ -660,9 +544,9 @@ series: [
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2017/04/12/echarts_chinamap/';
+            this.page.url = 'http://yoursite.com/2017/05/01/python_concurrency/';
         
-        this.page.identifier = 'echarts_chinamap';
+        this.page.identifier = 'python_concurrency';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
