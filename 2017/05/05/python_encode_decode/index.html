@@ -3,14 +3,30 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2017 | Science &amp; Technology For Future</title>
+    <title>python encode&amp;decode | Science &amp; Technology For Future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Science & Technology For Future">
-<meta property="og:url" content="http://yoursite.com/archives/2017/page/2/index.html">
+    <meta name="description" content="1.编码说明首先要搞清楚，字符串在Python内部的表示是unicode编码原则：
+在做编码转换时，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。
+decode的作用是将其他编码的字符串转换成unicode编码，
+
+如str1.decode(&amp;apos;gb2312&amp;apos;)，表示将gb23">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python encode&decode">
+<meta property="og:url" content="http://yoursite.com/2017/05/05/python_encode_decode/index.html">
 <meta property="og:site_name" content="Science & Technology For Future">
+<meta property="og:description" content="1.编码说明首先要搞清楚，字符串在Python内部的表示是unicode编码原则：
+在做编码转换时，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。
+decode的作用是将其他编码的字符串转换成unicode编码，
+
+如str1.decode(&amp;apos;gb2312&amp;apos;)，表示将gb23">
+<meta property="og:updated_time" content="2017-05-05T08:31:02.824Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Science & Technology For Future">
+<meta name="twitter:title" content="python encode&decode">
+<meta name="twitter:description" content="1.编码说明首先要搞清楚，字符串在Python内部的表示是unicode编码原则：
+在做编码转换时，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。
+decode的作用是将其他编码的字符串转换成unicode编码，
+
+如str1.decode(&amp;apos;gb2312&amp;apos;)，表示将gb23">
     
 
     
@@ -205,122 +221,191 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2017</h1>
-            </div>
+            <section id="main"><article id="post-python_encode_decode" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/04/06/callback_function/">callback_function</a>
+        <h1 class="article-title" itemprop="name">
+            python encode&amp;decode
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/04/06/callback_function/">
-            <time datetime="2017-04-06T02:19:56.403Z" itemprop="datePublished">2017-04-06</time>
+        <a href="/2017/05/05/python_encode_decode/">
+            <time datetime="2017-05-05T08:31:02.638Z" itemprop="datePublished">2017-05-05</time>
         </a>
     </div>
 
 
-                    
-                    
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                        
+                        
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/04/05/crontab_time/">crontab</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="1-编码说明"><a href="#1-编码说明" class="headerlink" title="1.编码说明"></a>1.编码说明</h1><h2 id="首先要搞清楚，字符串在Python内部的表示是unicode编码"><a href="#首先要搞清楚，字符串在Python内部的表示是unicode编码" class="headerlink" title="首先要搞清楚，字符串在Python内部的表示是unicode编码"></a>首先要搞清楚，字符串在Python内部的表示是unicode编码</h2><p><strong>原则：</strong></p>
+<p><code>在做编码转换时，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。</code></p>
+<pre><code>decode的作用是将其他编码的字符串转换成unicode编码，
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/05/crontab_time/">
-            <time datetime="2017-04-05T13:35:42.719Z" itemprop="datePublished">2017-04-05</time>
-        </a>
-    </div>
+如str1.decode(&apos;gb2312&apos;)，表示将gb2312编码的字符串转换成unicode编码。 
 
+encode的作用是将unicode编码转换成其他编码的字符串， 
 
-                    
-                    
-                </div>
-            </div>
+如str2.encode(&apos;gb2312&apos;)，表示将unicode编码的字符串转换成gb2312编码。
+</code></pre><a id="more"></a>
+<p>例如：</p>
+<p>gb2312&gt;&gt;&gt;utf-8</p>
+<pre><code>str1(gb2312) 
+
+mstr=str1.decode(&apos;gb2312&apos;)
+
+mstr(unicode)
+
+str2=mstr.encode(&apos;utf-8&apos;)   
+
+str2(utf-8)
+
+或者
+
+str1(gb2312)
+
+str2=str1.decode(&apos;gb2312&apos;).encode(&apos;utf-8&apos;)
+
+str2(utf-8)
+</code></pre><h1 id="2-base64编码"><a href="#2-base64编码" class="headerlink" title="2.base64编码"></a>2.base64编码</h1><p>Base64是一种基于64个可打印字符来表示二进制数据的表示方法。</p>
+<p>由于2的6次方等于64，所以每6个比特为一个单元，对应某个可打印字符。</p>
+<p>三个字节有24个比特，对应于4个Base64单元，即3个字节需要用4个可打印字符来表示。它可用来作为电子邮件的传输编码。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9 ，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。编码后的数据比原始数据略长，为原来的4/3。</p>
+<p>Base64常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据（或不可打印的字符串）。<br><strong>包括MIME的email，email via MIME, 在XML中存储复杂数据.</strong></p>
+<ul>
+<li>在邮件中的用途：</li>
+</ul>
+<p>在MIME格式的电子邮件中，base64可以用来将binary的字节序列数据编码成ASCII字符序列构成的文本。使用时，在传输编码方式中指定base64。使用的字符包括大小写字母各26个，加上10个数字，和加号“+”，斜杠“/”，一共64个字符，等号“=”用来作为后缀用途。</p>
+<ul>
+<li>在URL中的用途：</li>
+</ul>
+<p>标准的Base64并不适合直接放在URL里传输，因为URL编码器会把标准Base64中的“/”和“+”字符变为形如“%XX”的形式，而这些“%”号在存入数据库时还需要再进行转换，因为ANSI SQL中已将“%”号用作通配符。为解决此问题，可采用一种用于URL的改进Base64编码，它不在末尾填充’=’号，并将标准Base64中的“+”和“/”分别改成了“<em>”和“-”,</em>这样就免去了在URL编解码和数据库存储时所要作的转换，避免了编码信息长度在此过程中的增加，并统一了数据库、表单等处对象标识符的格式。<em>另有一种用于正则表达式的改进Base64变种，它将“+”和“/”改成了“!”和“-”，因为“+”，“</em>”在正则表达式中都可能具有特殊含义。**</p>
+
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/04/05/mysql_deploy/">mysql deploy</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/05/mysql_deploy/">
-            <time datetime="2017-04-05T12:25:15.353Z" itemprop="datePublished">2017-04-05</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/04/05/git_conclusion/">git conclusion</a>
-        </h1>
-    
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/05/git_conclusion/">
-            <time datetime="2017-04-05T08:49:59.000Z" itemprop="datePublished">2017-04-05</time>
-        </a>
-    </div>
-
-
-                    
-                    
-                </div>
-            </div>
-        </div>
-    
 </div>
 
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2017/">&laquo; 上一页</a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span>
-    </nav>
+    <a data-url="http://yoursite.com/2017/05/05/python_encode_decode/" data-id="cj2bl2cwo000d8c0rnmo059w2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/05/05/python_encode_decode/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2017/05/05/python_encode_decode/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/05/02/nginx_fundamental_config/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">nginx fundamental config</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -479,11 +564,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'http://yoursite.com/2017/05/05/python_encode_decode/';
+        
+        this.page.identifier = 'python_encode_decode';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/count.js';
+        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
